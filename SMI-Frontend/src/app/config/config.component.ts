@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-config',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./config.component.css']
 })
 export class ConfigComponent implements OnInit {
+  configForm = this.formBuilder.group({
+    name: '', 
+    address: ''
+  })
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
   }
