@@ -14,9 +14,9 @@ export class ConfigComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit(): void {
   }
-
+ //TEST GIT MERGE 
 }
