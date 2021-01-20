@@ -18,5 +18,5 @@ export class ConfigComponent implements OnInit {
 
   ngOnInit(): void {
   }
- //TEST GIT MERGE PUSH MACHIN
+ //TEST GIT MERGE 
 }
