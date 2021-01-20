@@ -1,0 +1,76 @@
+#register{
+    display: none;
+}
+
+.box-register{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1E1E1E;
+    box-sizing: border-box;
+    box-shadow: 0 1em 1.5em black;
+    border-radius: 0.7em;
+    padding: 2em;
+}
+
+.title-register{
+    margin-bottom: 1em;
+    color: white;
+    text-align: center;
+}
+
+.form-register{
+    margin: 1em;
+}
+
+.form-register label{
+    text-align: center;
+    color: white;
+}
+
+.box-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1E1E1E;
+    box-sizing: border-box;
+    box-shadow: 0 1em 1.5em black;
+    border-radius: 0.7em;
+    padding: 2em;
+}
+
+.title-login{
+    margin-bottom: 1em;
+    color: white;
+    text-align: center;
+}
+
+.form-login{
+    margin: 1em;
+}
+
+.form-login label{
+    text-align: center;
+    color: white;
+}
+
+.button{
+    border-radius: 1em;
+    height: 2em;
+    font-size: 1em;
+    margin: 0.5em auto;
+    position: relative;
+    width: 100%;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.error{
+    color: red;
+}
+
+.resetPassword{
+    color: white;
+}
