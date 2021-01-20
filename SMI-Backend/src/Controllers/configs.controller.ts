@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { Config } from 'src/Entities/config.entity';
-import { ConfigsService } from 'src/Services/configs.service';
+import { Config } from 'src/entities/config.entity';
+import { ConfigsService } from 'src/services/configs.service';
 
 @Controller('configs')
 export class ConfigsController {
@@ -8,7 +8,7 @@ export class ConfigsController {
   
     @Post()
     create(@Body() config: Config) {
-      return this.configsService.create(config);
+      this.configsService.create(config);
     }
   
     @Get()
@@ -18,16 +18,16 @@ export class ConfigsController {
   
     @Get(':id')
     findOne(@Param('id') id: number) {
-      return this.configsService.findOne(+id);
+      return this.configsService.findOne(id);
     }
   
     @Put(':id')
     update(@Param('id') id: number, @Body() config: Config) {
-      return this.configsService.update(+id, config);
+      this.configsService.update(id, config);
     }
   
     @Delete(':id')
     remove(@Param('id') id: number) {
-      return this.configsService.remove(+id);
+      return this.configsService.remove(id);
     }
 }
