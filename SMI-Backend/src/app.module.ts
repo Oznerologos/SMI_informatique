@@ -3,12 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
-import { Newsletter } from './Entities/newsletter.entity';
-import { User } from './Entities/user.entity';
-import { Config } from './Entities/config.entity';
-import { UsersModule } from './Modules/users.module';
-import { ConfigsModule } from './Modules/configs.module';
-import { NewslettersModule } from './Modules/newsletters.module';
+import { Newsletter } from './entities/newsletter.entity';
+import { User } from './entities/user.entity';
+import { Config } from './entities/config.entity';
+import { UsersModule } from './modules/users.module';
+import { ConfigsModule } from './modules/configs.module';
+import { NewslettersModule } from './modules/newsletters.module';
+import { ResetPasswordModule } from './modules/reset-password.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -21,8 +22,8 @@ import { NewslettersModule } from './Modules/newsletters.module';
     entities: [User,Config,Newsletter],
     synchronize: true,
     logger: 'simple-console',
-  }), 
-  UsersModule, ConfigsModule, NewslettersModule],
+  }),
+  UsersModule, ConfigsModule, NewslettersModule, ResetPasswordModule],
   controllers: [AppController],
   providers: [AppService],
 })

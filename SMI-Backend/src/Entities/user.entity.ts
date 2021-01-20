@@ -1,11 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Config } from './config.entity';
 
-enum Role {
-    User,
-    Admin
-  }
-
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
@@ -15,10 +10,10 @@ export class User {
     configs: Config[];
 
     @Column()
-    firstName: string;
+    firstname: string;
 
     @Column()
-    lastName: string;
+    lastname: string;
 
     @Column()
     mail: string;
@@ -32,6 +27,6 @@ export class User {
     @Column({nullable: true, default: null})
     resettoken: string;
 
-    @Column()
-    role: Role;
+    @Column({default: "user"})
+    role: string;
 }
