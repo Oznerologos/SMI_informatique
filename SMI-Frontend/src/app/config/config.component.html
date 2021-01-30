@@ -1,1 +1,160 @@
 <p>config works!</p>
+<form [formGroup] = "configForm" (ngSubmit)="onSubmit()">
+
+
+    <div class="category">
+        <h2>Informations sur la configuration</h2>
+        <div>
+            <label for="name"> Nom de la configuration :</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+    
+        <div>
+            <label for="budget">Budget : </label>
+            <input type="number" id="number" formControlName="budget">
+        </div>
+    
+        <div>
+            <label>Monté :</label>
+            <input type="radio" value="Monté" formControlName="mounted"> Oui
+    
+            <input type="radio" value="Non monté" formControlName="mounted"> Non
+        </div>
+
+    </div>
+
+    <div class="category">
+        <h2>Composants de l'ordinateur</h2>
+
+        <div>
+            <label for="motherBoard">Carte mère : </label> <input type="checkBox" [(ngModel)]="mbCheck" [ngModelOptions]="{standalone: true}"> {{mbCheck}}
+            <input type="text" id="motherBoard" formControlName="motherBoard"> 
+        </div>
+
+        <div>
+            <label for="proc">Processeur : </label> <input type="checkBox" [(ngModel)]="procCheck" [ngModelOptions]="{standalone: true}"> {{procCheck}}
+            <input type="text" id="proc" formControlName="proc">
+        </div>
+
+        <div>
+            <label for="GPU">Carte graphique : </label> <input type="checkBox" [(ngModel)]="gpuCheck" [ngModelOptions]="{standalone: true}"> {{gpuCheck}}
+            <input type="text" id="GPU" formControlName="GPU">
+        </div>
+
+        <div>
+            <label for="RAM">RAM : </label> <input type="checkBox" [(ngModel)]="ramCheck" [ngModelOptions]="{standalone: true}"> {{ramCheck}}
+            <input type="text" id="RAM" formControlName="RAM">
+        </div>
+
+        <div>
+            <label for="coolingSystem">Système de refroidissement : </label> <input type="checkBox" [(ngModel)]="coolingCheck" [ngModelOptions]="{standalone: true}"> {{coolingCheck}}
+            <input type="text" id="coolingSystem" formControlName="coolingSystem">
+        </div>
+
+        <div>
+            <label for="powerUnit">Alimentation : </label> <input type="checkBox" [(ngModel)]="powerCheck" [ngModelOptions]="{standalone: true}"> {{powerCheck}}
+            <input type="text" id="powerUnit" formControlName="powerUnit">
+        </div>
+
+        <div>
+            <label for="SSD1">Disque dur (SSD1) : </label> <input type="checkBox" [(ngModel)]="ssd1Check" [ngModelOptions]="{standalone: true}"> {{ssd1Check}}
+            <input type="text" id="SSD1" formControlName="SSD1">
+        </div>
+    
+        <div>
+            <label for="SSD2">Disque dur (SSD2) : </label> <input type="checkBox" [(ngModel)]="ssd2Check" [ngModelOptions]="{standalone: true}"> {{ssd2Check}}
+            <input type="text" id="SSD2" formControlName="SSD2">
+        </div>
+    
+        <div>
+            <label for="HDD1">Disque dur (HDD1) : </label> <input type="checkBox" [(ngModel)]="hdd1Check" [ngModelOptions]="{standalone: true}"> {{hdd1Check}}
+            <input type="text" id="HDD1" formControlName="HDD1">
+        </div>
+    
+        <div>
+            <label for="HDD2">Disque dur (HDD2) : </label> <input type="checkBox" [(ngModel)]="hdd2Check" [ngModelOptions]="{standalone: true}"> {{hdd2Check}}
+            <input type="text" id="HDD2" formControlName="HDD2">
+        </div>
+
+        <div>
+            <label for="wifiBoard">Carte wifi : </label> <input type="checkBox" [(ngModel)]="wifiCheck" [ngModelOptions]="{standalone: true}"> {{wifiCheck}}
+            <input type="text" id="wifiBoard" formControlName="wifiBoard">
+        </div>
+
+        <div>
+            <label for="soundBoard">Carte son : </label> <input type="checkBox" [(ngModel)]="soundCheck" [ngModelOptions]="{standalone: true}"> {{soundCheck}}
+            <input type="text" id="soundBoard " formControlName="soundBoard">
+        </div>
+
+        <div>
+            <label for="case">Boitier : </label> <input type="checkBox" [(ngModel)]="caseCheck" [ngModelOptions]="{standalone: true}"> {{caseCheck}}
+            <input type="text" id="case" formControlName="case">
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Périphériques de l'ordinateur</h2>
+
+        <div>
+            <label for="cdPlayerBurner">Lecteur CD : </label>
+            <input type="text" id="cdPlayerBurner" formControlName="cdPlayerBurner">
+        </div>
+    
+        <div>
+            <label for="cardsPlayer">Lecteur de cartes : </label>
+            <input type="text" id="cardsPlayer" formControlName="cardsPlayer">
+        </div>
+
+        <div>
+            <label for="display1">Ecran 1 : </label>
+            <input type="text" id="display1" formControlName="display1">
+        </div>
+    
+        <div>
+            <label for="display2">Ecran 2 : </label>
+            <input type="text" id="display2" formControlName="display2">
+        </div>
+
+        <div>
+            <label for="keyBoard">Clavier : </label>
+            <input type="text" id="keyBoard" formControlName="keyBoard">
+        </div>
+    
+        <div>
+            <label for="mouse">Souris : </label>
+            <input type="text" id="mouse" formControlName="mouse">
+        </div>
+
+        <div>
+            <label for="inverter">Onduleur (batterie) : </label>
+            <input type="text" id="inverter" formControlName="inverter">
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Système d'exploitations et logiciels</h2>
+
+        <div>
+            <label for="OS">Système d'exploitation : </label>
+            <input type="text" id="OS" formControlName="OS">
+        </div>
+    
+        <div>
+            <label for="antivirus">Antivirus : </label>
+            <input type="text" id="antivirus" formControlName="antivirus">
+        </div>
+    
+        <div>
+            <label for="microsoftOffice">microsoftOffice : </label>
+            <input type="text" id="microsoftOffice" formControlName="microsoftOffice">
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Message complémentaire : </h2>
+        <label for="messages">Dites nous tout !</label><br>
+        <textarea id="message" formControlName="message"></textarea>
+    </div>
+
+    <button class="button" type="submit"> Reserver </button>
+</form>
