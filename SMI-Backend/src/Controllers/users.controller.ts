@@ -1,18 +1,24 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { User } from 'src/entities/user.entity';
 import { UsersService } from 'src/services/users.service';
 
 @Controller('users')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService, private jwtService: JwtService,) {}
   
   @Post('')
   async create(@Body() user: User) {
     var existingUser = await this.usersService.findOneByMail(user.mail);
+    const payload = { mail: user.mail, sub: user.id };
     if (existingUser != undefined) {
-      return 'Cet utilisateur existe déjà';
+      return 'Cet email existe déjà';
     } else {
-    this.usersService.create(user);
+      this.usersService.create(user);
+      return {
+        user: user.mail,
+        access_token: this.jwtService.sign(payload),
+      }
     }
   }
 
