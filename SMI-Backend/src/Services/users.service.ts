@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from '../Entities/user.entity';
+import { User } from '../entities/user.entity';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -26,6 +26,12 @@ export class UsersService {
 
   async findOneByMail(mail: string): Promise<User> {
     return this.usersRepository.findOne({ where: { mail } });
+  }
+
+  async findOneGeneric(data: { key: string; value: any }): Promise<User> {
+    return this.usersRepository.findOne({
+      where: { [data.key]: data.value },
+    });
   }
 
   async update(id: number, user: User) {

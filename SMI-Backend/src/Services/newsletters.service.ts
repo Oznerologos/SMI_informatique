@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Newsletter } from 'src/Entities/newsletter.entity';
+import { Newsletter } from 'src/entities/newsletter.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -11,16 +11,17 @@ export class NewslettersService {
       ) {}
 
       create(newsletter: Newsletter) {
-        this.newslettersRepository.create(newsletter);
+        this.newslettersRepository.insert(newsletter);
       }
     
       findAll(): Promise<Newsletter[]> {
         return this.newslettersRepository.find();
       }
-    
-      findOne(id: number): Promise<Newsletter> {
-        return this.newslettersRepository.findOne(id);
+
+      async findOneByMail(mail: string): Promise<Newsletter> {
+        return this.newslettersRepository.findOne({ where: { mail } });
       }
+    
 
       update(id: number, newsletter: Newsletter) {
         this.newslettersRepository.update(id, newsletter);
