@@ -1,11 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-enum Status {
-    Active,
-    Inactive,
-    Deleted
-  }
-
 @Entity()
 export class Newsletter {
     @PrimaryGeneratedColumn()
@@ -14,6 +8,6 @@ export class Newsletter {
     @Column()
     mail: string;
 
-    @Column()
-    status: Status;
+    @Column({default: "active"})
+    status: string;
 }

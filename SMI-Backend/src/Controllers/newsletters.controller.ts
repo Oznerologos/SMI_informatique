@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { Newsletter } from 'src/Entities/newsletter.entity';
-import { NewslettersService } from 'src/Services/newsletters.service';
+import { Newsletter } from 'src/entities/newsletter.entity';
+import { NewslettersService } from 'src/services/newsletters.service';
 
 @Controller('newsletters')
 export class NewslettersController {  
@@ -8,7 +8,7 @@ export class NewslettersController {
     
     @Post()
     create(@Body() newsletter: Newsletter) {
-        return this.newslettersService.create(newsletter);
+        this.newslettersService.create(newsletter);
     }
 
     @Get()
@@ -16,18 +16,18 @@ export class NewslettersController {
         return this.newslettersService.findAll();
     }
 
-    @Get(':id')
-    findOne(@Param('id') id: number) {
-        return this.newslettersService.findOne(+id);
+    @Get('getOneMail/:mail')
+    getOneUser(@Param() params): Promise<Newsletter> {
+      return this.newslettersService.findOneByMail(params.mail);
     }
 
     @Put(':id')
     update(@Param('id') id: number, @Body() newsletter: Newsletter) {
-        return this.newslettersService.update(+id, newsletter);
+        this.newslettersService.update(id, newsletter);
     }
 
     @Delete(':id')
     remove(@Param('id') id: number) {
-        return this.newslettersService.remove(+id);
+        return this.newslettersService.remove(id);
     }
 }

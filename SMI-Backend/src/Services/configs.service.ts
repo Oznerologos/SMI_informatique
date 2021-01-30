@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Config } from 'src/Entities/config.entity';
+import { Config } from 'src/entities/config.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -11,7 +11,7 @@ export class ConfigsService {
       ) {}
 
       create(config: Config) {
-        this.configsRepository.create(config);
+        this.configsRepository.insert(config);
       }
     
       findAll(): Promise<Config[]> {
