@@ -1,0 +1,29 @@
+.header-left{
+    float: left;
+}
+
+.header-right {
+    float: right;
+}
+
+.header a{
+    color: black;
+    text-align: center;
+    padding: 0.5em;
+    text-decoration: none;
+    font-size: 1.2em; 
+    border-radius: 0.5em;
+}
+
+.nom {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.header a:hover {
+    background-color: #44566c;
+}
+
+.imgHeader{
+    width: 2em;
+}

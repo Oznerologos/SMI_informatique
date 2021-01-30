@@ -74,3 +74,11 @@
 .resetPassword{
     color: white;
 }
+
+i{
+    color: white;
+}
+
+.invalid{
+    color: red;
+}
