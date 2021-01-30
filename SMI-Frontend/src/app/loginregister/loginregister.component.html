@@ -1,0 +1,64 @@
+<div id="register" class="box-register">
+    <h2 class="title-register">Inscription</h2>
+
+    <form class="form-register" [formGroup]="formRegister" (ngSubmit)="submitRegister()">
+
+        <div class="form-register">
+            <label for="firstname">Prénom</label><br>
+            <input type="text" name="firstname" id="firstname" formControlName="firstname">
+        </div>
+
+        <div class="form-register">
+            <label for="lastname">Nom</label><br>
+            <input type="text" name="lastname" id="lastname" formControlName="lastname">
+        </div>
+
+        <div class="form-register">
+            <label for="mail">E-mail</label><br>
+            <input type="email" name="mail" id="mail" formControlName="mail">
+        </div>
+
+        <div class="form-register">
+            <label for="phone">Téléphone</label><br>
+            <input type="tel" name="phone" id="phone" formControlName="phone">
+        </div>
+
+        <div class="form-register">
+            <label for="password">Mot de passe</label><br>
+            <input type="password" name="password" id="password" formControlName="password">
+        </div>
+
+        <div class="form-register">
+            <label for="passwordVerif">Retapez votre mot de passe</label><br>
+            <input type="password" name="passwordVerif" id="passwordVerif">
+        </div>
+
+        <button type="submit" class="button">S'inscrire</button> 
+      </form>
+
+      <button class="button" (click)="retour()">Retour</button> 
+      <p class="error" *ngIf="error != ''"> {{error}}</p>
+</div>
+
+<div id="login" class="box-login">
+    <h2 class="title-login">Connexion</h2>
+
+    <form class="form-login" [formGroup]="formLogin" (ngSubmit)="submitLogin()">
+        <div class="form-login">
+            <label for="mail">E-mail</label><br>
+            <input type="email" name="mail" id="mail" formControlName="mail">
+        </div>
+
+        <div class="form-login">
+            <label for="password">Mot de passe</label><br>
+            <input type="password" name="password" id="password" formControlName="password">
+        </div>
+
+        <button type="submit" class="button">Se connecter</button> 
+    </form>
+
+      <a class="resetPassword" style="cursor: pointer" (click)="resetPassword()">Mot de passe oublié ?</a>
+      <p class="error" *ngIf="error != ''"> {{error}}</p>
+
+      <button class="button" (click)="formulaireInscription()">Créer un compte</button>
+</div>

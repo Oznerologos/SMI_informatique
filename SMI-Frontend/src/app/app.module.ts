@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import { EzconfigComponent } from './ezconfig/ezconfig.component';
 import { MainComponent } from './main/main.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { LoginregisterComponent } from './loginregister/loginregister.component';
+import { ResponseResetPasswordComponent } from './response-reset-password/response-reset-password.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,17 @@ import { AboutComponent } from './about/about.component';
     EzconfigComponent,
     MainComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    LoginregisterComponent,
+    ResponseResetPasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
