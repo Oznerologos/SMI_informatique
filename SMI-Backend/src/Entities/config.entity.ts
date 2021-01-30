@@ -82,6 +82,9 @@ export class Config {
     microsoftoffice: string;
 
     @Column()
+    soundCard: string;
+
+    @Column()
     inverter: string;
     
     @Column()

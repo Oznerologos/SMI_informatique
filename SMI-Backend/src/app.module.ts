@@ -10,6 +10,7 @@ import { UsersModule } from './modules/users.module';
 import { ConfigsModule } from './modules/configs.module';
 import { NewslettersModule } from './modules/newsletters.module';
 import { ResetPasswordModule } from './modules/reset-password.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -23,7 +24,7 @@ import { ResetPasswordModule } from './modules/reset-password.module';
     synchronize: true,
     logger: 'simple-console',
   }),
-  UsersModule, ConfigsModule, NewslettersModule, ResetPasswordModule],
+  AuthModule, UsersModule, ConfigsModule, NewslettersModule, ResetPasswordModule],
   controllers: [AppController],
   providers: [AppService],
 })
