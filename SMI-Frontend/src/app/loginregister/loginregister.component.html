@@ -4,36 +4,68 @@
     <form class="form-register" [formGroup]="formRegister" (ngSubmit)="submitRegister()">
 
         <div class="form-register">
-            <label for="firstname">Prénom</label><br>
-            <input type="text" name="firstname" id="firstname" formControlName="firstname">
+            <label for="firstname">Prénom*</label><br>
+            <input type="text" name="firstname" id="firstname" formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && firstname.errors }">  
+            <div *ngIf="submitted && firstname.errors" class="invalid">
+                <div *ngIf="firstname.errors.required">
+                    Le prénom est requis
+                </div>
+            </div>
         </div>
 
         <div class="form-register">
-            <label for="lastname">Nom</label><br>
-            <input type="text" name="lastname" id="lastname" formControlName="lastname">
+            <label for="lastname">Nom*</label><br>
+            <input type="text" name="lastname" id="lastname" formControlName="lastname" [ngClass]="{ 'is-invalid': submitted && lastname.errors }">
+            <div *ngIf="submitted && lastname.errors" class="invalid">
+                <div *ngIf="lastname.errors.required">
+                    Le nom est requis
+                </div>
+            </div>
         </div>
 
         <div class="form-register">
-            <label for="mail">E-mail</label><br>
-            <input type="email" name="mail" id="mail" formControlName="mail">
+            <label for="mail">E-mail*</label><br>
+            <input type="email" name="mail" id="mail" formControlName="mail" [ngClass]="{ 'is-invalid': submitted && mail.errors }">
+            <div *ngIf="submitted && mail.errors" class="invalid">
+                <div *ngIf="mail.errors.required">
+                    Le mail est requis
+                </div>
+                <div *ngIf="mail.errors.email">
+                    Le format du mail est invalide
+                </div>
+            </div>
         </div>
 
         <div class="form-register">
-            <label for="phone">Téléphone</label><br>
-            <input type="tel" name="phone" id="phone" formControlName="phone">
+            <label for="phone">Numéro de téléphone*</label><br>
+            <input type="tel" name="phone" id="phone" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && phone.errors }">
+            <div *ngIf="submitted && phone.errors" class="invalid">
+                <div *ngIf="phone.errors.required">
+                    Le numéro de téléphone est requis
+                </div>
+            </div>
         </div>
 
         <div class="form-register">
-            <label for="password">Mot de passe</label><br>
-            <input type="password" name="password" id="password" formControlName="password">
+            <label for="password">Mot de passe*</label><br>
+            <input type="password" name="password" id="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && password.errors }">
+            <div *ngIf="submitted && password.errors" class="invalid">
+                <div *ngIf="password.errors.required">
+                    Le mot de passe est requis
+                </div>
+                <div *ngIf="password.errors.minlength">
+                    Le mot de passe doit contenir au minimum 8 caractères
+                </div>
+            </div>
         </div>
 
         <div class="form-register">
-            <label for="passwordVerif">Retapez votre mot de passe</label><br>
+            <label for="passwordVerif">Confirmez votre mot de passe*</label><br>
             <input type="password" name="passwordVerif" id="passwordVerif">
         </div>
 
-        <button type="submit" class="button">S'inscrire</button> 
+        <button type="submit" class="button">S'inscrire</button>
+        <i>* : Informations obligatoires</i> 
       </form>
 
       <button class="button" (click)="retour()">Retour</button> 
@@ -45,16 +77,27 @@
 
     <form class="form-login" [formGroup]="formLogin" (ngSubmit)="submitLogin()">
         <div class="form-login">
-            <label for="mail">E-mail</label><br>
-            <input type="email" name="mail" id="mail" formControlName="mail">
+            <label for="mail">E-mail*</label><br>
+            <input type="email" name="mail" id="mail" formControlName="mail" [ngClass]="{ 'is-invalid': submittedLog && mailLog.errors }">
+            <div *ngIf="submittedLog && mailLog.errors" class="invalid">
+                <div *ngIf="mailLog.errors.required">
+                    Le mail est requis
+                </div>
+            </div>
         </div>
 
         <div class="form-login">
-            <label for="password">Mot de passe</label><br>
-            <input type="password" name="password" id="password" formControlName="password">
+            <label for="password">Mot de passe*</label><br>
+            <input type="password" name="password" id="password" formControlName="password" [ngClass]="{ 'is-invalid': submittedLog && passwordLog.errors }">
+            <div *ngIf="submittedLog && passwordLog.errors" class="invalid">
+                <div *ngIf="passwordLog.errors.required">
+                    Le mot de passe est requis
+                </div>
+            </div>
         </div>
 
         <button type="submit" class="button">Se connecter</button> 
+        <i>* : Informations obligatoires</i> 
     </form>
 
       <a class="resetPassword" style="cursor: pointer" (click)="resetPassword()">Mot de passe oublié ?</a>

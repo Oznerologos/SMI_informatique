@@ -1,11 +1,15 @@
-<p>SMI Informatique</p>
-<nav>
-    <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/about">A propos</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-        <li><a routerLink="/EZConfig">Configuration simple</a></li>
-        <li><a routerLink="/Config">Configuration avancée</a></li>
-        <li><a routerLink="/registerLogin">Inscription/Connexion</a></li>
-    </ul>
-</nav>
+<div class="header">
+    <div class="header-left" >
+        <a routerLink="/home" class="nom">SMI Informatique</a>
+    </div>
+    <div class="header-right">
+        <a routerLink="/">Home</a>
+        <a routerLink="/about">A propos</a>
+        <a routerLink="/contact">Contact</a>
+        <a routerLink="/EZConfig">Configuration simple</a>
+        <a routerLink="/Config">Configuration avancée</a>
+        <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin">Inscription/Connexion</a>
+        <a *ngIf="authService.loggedIn()" routerLink="/profil">Profil</a>
+        <a *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Déconnexion</a>
+    </div>
+</div>

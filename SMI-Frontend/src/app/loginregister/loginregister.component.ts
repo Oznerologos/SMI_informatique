@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -12,19 +12,21 @@ import { AuthService } from '../services/auth.service';
 export class LoginregisterComponent implements OnInit {
 
   formRegister = this.formBuilder.group({
-    firstname: '',
-    lastname: '',
-    mail: '',
-    phone: '',
-    password: ''
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
+    mail: ['', [Validators.required, Validators.email]],
+    phone: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(8)]]
   });
 
   formLogin = this.formBuilder.group({
-    mail: '',
-    password: ''
+    mail: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required]
   });
 
   public error: string;
+  submitted = false;
+  submittedLog = false;
 
   constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router) { }
 
@@ -33,24 +35,53 @@ export class LoginregisterComponent implements OnInit {
   }
 
   submitRegister(){
-    console.log(this.formRegister.value);
+    this.submitted = true;
 
-    this.auth.register(this.formRegister).subscribe(
-      data =>{
-        localStorage.setItem('token', data.token);
-        this.router.navigate(['/']);
-      },
-      err => console.log(err)
-    )
+    //Verification de la validité du formulaire. 
+    //Si non valide, stop fonction
+    if (this.formRegister.invalid) {
+        return;
+    }
+
+    //Vérification du mot de passe
+    var psw = (<HTMLInputElement>document.getElementById("password")).value;
+    var pswRepeat = (<HTMLInputElement>document.getElementById("passwordVerif")).value;
+    
+    if(psw == pswRepeat && psw !=''){
+      //Envoie du formulaire
+      this.auth.register(this.formRegister.value).subscribe(
+        data =>{
+          if(data.access_token != null || data.access_token != undefined){
+            localStorage.setItem('token', data.access_token);
+            this.router.navigate(['/']);
+          }
+        },
+        err => {
+          console.log(err);
+          this.error = err.error.text;
+        }
+      )
+    }else{
+      this.error = "Les deux mots de passe saisis ne correspondent pas";
+    }
   }
 
   submitLogin(){
-    console.log(this.formLogin.value);
+    this.submittedLog = true;
 
-    this.auth.login(this.formLogin).subscribe(
+    //Verification de la validité du formulaire. 
+    //Si non valide, stop fonction
+    if (this.formLogin.invalid) {
+        return;
+    }
+
+    //Envoie du formulaire
+    this.auth.login(this.formLogin.value).subscribe(
       data =>{
-        localStorage.setItem('token', data.token);
-        this.router.navigate(['/']);
+        if(data.access_token != null || data.access_token != undefined){
+          localStorage.setItem('token', data.access_token);
+          this.router.navigate(['/']);
+        }
       },
       err => {
         console.log(err);
@@ -60,17 +91,18 @@ export class LoginregisterComponent implements OnInit {
   }
 
   resetPassword(){
-    var mail = prompt("Entrez votre adresse mail");
-    var tokenUser = localStorage.getItem('token');
-    -
-    this.auth.resetPassword(tokenUser, mail).subscribe(
+    var mailUser = prompt("Entrez votre adresse mail");
+    var mailEnvoie = {mail: mailUser};
+
+    //Envoie du formulaire
+    this.auth.resetPassword(mailEnvoie).subscribe(
       data =>{
         localStorage.setItem('token', data.token);
         this.router.navigate(['/']);
       },
       err => {
         console.log(err);
-        this.error ="Adresse mail ou mot de passe incorrect";
+        this.error = "L'email rentré ne possède pas de compte";
       }
     )
   }
@@ -79,11 +111,48 @@ export class LoginregisterComponent implements OnInit {
     document.getElementById("register").style.display = "inline";
     document.getElementById("login").style.display = "none";
     this.error = "";
+    this.submitted = false;
+    this.submittedLog = false;
   }
 
   retour(){
     document.getElementById("register").style.display = "none";
     document.getElementById("login").style.display = "inline";
     this.error = "";
+    this.submitted = false;
+    this.submittedLog = false;
+  }
+
+
+
+  //Get des différents inputs. 
+  //Pour savoir s'ils sont vide ou non conforme au format
+
+  get firstname() {
+    return this.formRegister.get('firstname');
+  }
+
+  get lastname() {
+    return this.formRegister.get('lastname');
+  }
+
+  get mail() {
+    return this.formRegister.get('mail');
+  }
+
+  get phone() {
+    return this.formRegister.get('phone');
+  }
+
+  get password() {
+    return this.formRegister.get('password');
+  }
+
+  get mailLog() {
+    return this.formLogin.get('mail');
+  }
+
+  get passwordLog() {
+    return this.formLogin.get('password');
   }
 }
