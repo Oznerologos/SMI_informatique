@@ -12,7 +12,7 @@ export class UsersController {
     var existingUser = await this.usersService.findOneByMail(user.mail);
     const payload = { mail: user.mail, sub: user.id };
     if (existingUser != undefined) {
-      return 'Cet utilisateur existe déjà';
+      return 'Cet email existe déjà';
     } else {
       this.usersService.create(user);
       return {
