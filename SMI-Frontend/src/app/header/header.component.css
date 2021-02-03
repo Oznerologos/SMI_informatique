@@ -1,8 +1,13 @@
+.header {
+    margin-bottom: 100px;
+}
+
 .header-left{
-    float: left;
+    display: inline-block;
 }
 
 .header-right {
+    display: inline-block;
     float: right;
 }
 

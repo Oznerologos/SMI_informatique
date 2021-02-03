@@ -1,0 +1,48 @@
+.contact {
+    margin: 100px;
+}
+
+.contact{
+    margin-top: 10px;    
+}
+.comment {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+label
+{
+   display:block;
+   margin-bottom: 10px;
+   left: 0;
+}
+
+.error{
+    color: red;
+}
+
+i{
+    display: block;
+}
+
+.invalid{
+    color: red;
+}
+
+
+.informations {
+    margin-top: 50px;
+    margin: 100px;
+}
+
+
+.socialnetworks-contact {
+    width: 15%;
+    margin: 15px;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
