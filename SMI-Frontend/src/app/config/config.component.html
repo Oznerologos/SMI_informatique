@@ -10,7 +10,7 @@
         </div>
     
         <div>
-            <label for="budget">Budget : </label>
+            <label for="budget">Budget  </label>
             <input type="number" id="number" formControlName="budget">
         </div>
     
@@ -27,68 +27,108 @@
         <h2>Composants de l'ordinateur</h2>
 
         <div>
-            <label for="motherBoard">Carte mère : </label> <input type="checkBox" [(ngModel)]="mbCheck" [ngModelOptions]="{standalone: true}"> {{mbCheck}}
-            <input type="text" id="motherBoard" formControlName="motherBoard"> 
+            <label for="motherBoard">Carte mère  </label> 
+            <!-- <input type="checkBox" [(ngModel)]="mbCheck" [ngModelOptions]="{standalone: true}">  -->
+            <input type="radio" name="mbCheck" [(ngModel)]="mbCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="mbCheck" [(ngModel)]="mbCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="mbCheck" [(ngModel)]="mbCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="motherBoard" formControlName="motherBoard" *ngIf="mbCheck == 'me'" > 
         </div>
 
         <div>
-            <label for="proc">Processeur : </label> <input type="checkBox" [(ngModel)]="procCheck" [ngModelOptions]="{standalone: true}"> {{procCheck}}
-            <input type="text" id="proc" formControlName="proc">
+            <label for="proc">Processeur  </label> 
+            <input type="radio" name="procCheck" [(ngModel)]="procCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="procCheck" [(ngModel)]="procCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="procCheck" [(ngModel)]="procCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="proc" formControlName="proc" *ngIf="procCheck== 'me'" >
         </div>
 
         <div>
-            <label for="GPU">Carte graphique : </label> <input type="checkBox" [(ngModel)]="gpuCheck" [ngModelOptions]="{standalone: true}"> {{gpuCheck}}
-            <input type="text" id="GPU" formControlName="GPU">
+            <label for="GPU">Carte graphique  </label>            
+            <input type="radio" name="gpuCheck" [(ngModel)]="gpuCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="gpuCheck" [(ngModel)]="gpuCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="gpuCheck" [(ngModel)]="gpuCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="GPU" formControlName="GPU" *ngIf="gpuCheck== 'me'">
         </div>
 
         <div>
-            <label for="RAM">RAM : </label> <input type="checkBox" [(ngModel)]="ramCheck" [ngModelOptions]="{standalone: true}"> {{ramCheck}}
-            <input type="text" id="RAM" formControlName="RAM">
+            <label for="RAM">RAM  </label>            
+            <input type="radio" name="ramCheck" [(ngModel)]="ramCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non 
+            <input type="radio" name="ramCheck" [(ngModel)]="ramCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="ramCheck" [(ngModel)]="ramCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="RAM" formControlName="RAM" *ngIf="ramCheck== 'me'">
         </div>
 
         <div>
-            <label for="coolingSystem">Système de refroidissement : </label> <input type="checkBox" [(ngModel)]="coolingCheck" [ngModelOptions]="{standalone: true}"> {{coolingCheck}}
-            <input type="text" id="coolingSystem" formControlName="coolingSystem">
+            <label for="coolingSystem">Système de refroidissement  </label>             
+            <input type="radio" name="coolingCheck" [(ngModel)]="coolingCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="coolingCheck" [(ngModel)]="coolingCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="coolingCheck" [(ngModel)]="coolingCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="coolingSystem" formControlName="coolingSystem" *ngIf="coolingCheck== 'me'">
         </div>
 
         <div>
-            <label for="powerUnit">Alimentation : </label> <input type="checkBox" [(ngModel)]="powerCheck" [ngModelOptions]="{standalone: true}"> {{powerCheck}}
-            <input type="text" id="powerUnit" formControlName="powerUnit">
+            <label for="powerUnit">Alimentation  </label> 
+            <input type="radio" name="powerCheck" [(ngModel)]="powerCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="powerCheck" [(ngModel)]="powerCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="powerCheck" [(ngModel)]="powerCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="powerUnit" formControlName="powerUnit" *ngIf="powerCheck== 'me'">
         </div>
 
         <div>
-            <label for="SSD1">Disque dur (SSD1) : </label> <input type="checkBox" [(ngModel)]="ssd1Check" [ngModelOptions]="{standalone: true}"> {{ssd1Check}}
-            <input type="text" id="SSD1" formControlName="SSD1">
+            <label for="SSD1">Disque dur (SSD1)  </label> 
+            <input type="radio" name="ssd1Check" [(ngModel)]="ssd1Check" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="ssd1Check" [(ngModel)]="ssd1Check" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="ssd1Check" [(ngModel)]="ssd1Check" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="SSD1" formControlName="SSD1" *ngIf="ssd1Check== 'me'">
         </div>
     
         <div>
-            <label for="SSD2">Disque dur (SSD2) : </label> <input type="checkBox" [(ngModel)]="ssd2Check" [ngModelOptions]="{standalone: true}"> {{ssd2Check}}
-            <input type="text" id="SSD2" formControlName="SSD2">
+            <label for="SSD2">Disque dur (SSD2)  </label> 
+            <input type="radio" name="ssd2Check" [(ngModel)]="ssd2Check" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="ssd2Check" [(ngModel)]="ssd2Check" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="ssd2Check" [(ngModel)]="ssd2Check" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="SSD2" formControlName="SSD2" *ngIf="ssd2Check== 'me'">
         </div>
     
         <div>
-            <label for="HDD1">Disque dur (HDD1) : </label> <input type="checkBox" [(ngModel)]="hdd1Check" [ngModelOptions]="{standalone: true}"> {{hdd1Check}}
-            <input type="text" id="HDD1" formControlName="HDD1">
+            <label for="HDD1">Disque dur (HDD1)  </label> 
+            <input type="radio" name="hdd1Check" [(ngModel)]="hdd1Check" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="hdd1Check" [(ngModel)]="hdd1Check" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="hdd1Check" [(ngModel)]="hdd1Check" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="HDD1" formControlName="HDD1" *ngIf="hdd1Check== 'me'"> 
         </div>
     
         <div>
-            <label for="HDD2">Disque dur (HDD2) : </label> <input type="checkBox" [(ngModel)]="hdd2Check" [ngModelOptions]="{standalone: true}"> {{hdd2Check}}
-            <input type="text" id="HDD2" formControlName="HDD2">
+            <label for="HDD2">Disque dur (HDD2)  </label>
+            <input type="radio" name="hdd2Check" [(ngModel)]="hdd2Check" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="hdd2Check" [(ngModel)]="hdd2Check" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="hdd2Check" [(ngModel)]="hdd2Check" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="HDD2" formControlName="HDD2" *ngIf="hdd2Check== 'me'">
         </div>
 
         <div>
-            <label for="wifiBoard">Carte wifi : </label> <input type="checkBox" [(ngModel)]="wifiCheck" [ngModelOptions]="{standalone: true}"> {{wifiCheck}}
-            <input type="text" id="wifiBoard" formControlName="wifiBoard">
+            <label for="wifiBoard">Carte wifi  </label> 
+            <input type="radio" name="wifiCheck" [(ngModel)]="wifiCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="wifiCheck" [(ngModel)]="wifiCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="wifiCheck" [(ngModel)]="wifiCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="wifiBoard" formControlName="wifiBoard" *ngIf="wifiCheck== 'me'">
         </div>
 
         <div>
-            <label for="soundBoard">Carte son : </label> <input type="checkBox" [(ngModel)]="soundCheck" [ngModelOptions]="{standalone: true}"> {{soundCheck}}
-            <input type="text" id="soundBoard " formControlName="soundBoard">
+            <label for="soundBoard">Carte son  </label> 
+            <input type="radio" name="soundCheck" [(ngModel)]="soundCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="soundCheck" [(ngModel)]="soundCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="soundCheck" [(ngModel)]="soundCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="soundBoard " formControlName="soundBoard" *ngIf="soundCheck== 'me'">
         </div>
 
         <div>
-            <label for="case">Boitier : </label> <input type="checkBox" [(ngModel)]="caseCheck" [ngModelOptions]="{standalone: true}"> {{caseCheck}}
-            <input type="text" id="case" formControlName="case">
+            <label for="case">Boitier  </label> 
+            <input type="radio" name="caseCheck" [(ngModel)]="caseCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="caseCheck" [(ngModel)]="caseCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="caseCheck" [(ngModel)]="caseCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="case" formControlName="case" *ngIf="caseCheck== 'me'">
         </div>
     </div>
 
@@ -96,38 +136,59 @@
         <h2>Périphériques de l'ordinateur</h2>
 
         <div>
-            <label for="cdPlayerBurner">Lecteur CD : </label>
-            <input type="text" id="cdPlayerBurner" formControlName="cdPlayerBurner">
+            <label for="cdPlayerBurner">Lecteur CD  </label> 
+            <input type="radio" name="cdCheck" [(ngModel)]="cdCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="cdCheck" [(ngModel)]="cdCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="cdCheck" [(ngModel)]="cdCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="cdPlayerBurner" formControlName="cdPlayerBurner" *ngIf="cdCheck== 'me'">
         </div>
     
         <div>
-            <label for="cardsPlayer">Lecteur de cartes : </label>
-            <input type="text" id="cardsPlayer" formControlName="cardsPlayer">
+            <label for="cardsPlayer">Lecteur de cartes  </label>
+            <input type="radio" name="cardsCheck" [(ngModel)]="cardsCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="cardsCheck" [(ngModel)]="cardsCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="cardsCheck" [(ngModel)]="cardsCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="cardsPlayer" formControlName="cardsPlayer" *ngIf="cardsCheck== 'me'"> 
         </div>
 
         <div>
-            <label for="display1">Ecran 1 : </label>
-            <input type="text" id="display1" formControlName="display1">
+            <label for="display1">Ecran 1  </label> 
+            <input type="radio" name="display1Check" [(ngModel)]="display1Check" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="display1Check" [(ngModel)]="display1Check" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="display1Check" [(ngModel)]="display1Check" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="display1" formControlName="display1" *ngIf="display1Check== 'me'">
         </div>
     
         <div>
-            <label for="display2">Ecran 2 : </label>
-            <input type="text" id="display2" formControlName="display2">
+            <label for="display2">Ecran 2  </label>
+            <input type="radio" name="display2Check" [(ngModel)]="display2Check" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="display2Check" [(ngModel)]="display2Check" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="display2Check" [(ngModel)]="display2Check" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="display2" formControlName="display2" *ngIf="display2Check== 'me'"> 
         </div>
 
         <div>
-            <label for="keyBoard">Clavier : </label>
-            <input type="text" id="keyBoard" formControlName="keyBoard">
+            <label for="keyBoard">Clavier  </label> 
+            <input type="radio" name="keyboardCheck" [(ngModel)]="keyboardCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="keyboardCheck" [(ngModel)]="keyboardCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="keyboardCheck" [(ngModel)]="keyboardCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="keyBoard" formControlName="keyBoard" *ngIf="keyboardCheck== 'me'">
         </div>
     
         <div>
-            <label for="mouse">Souris : </label>
-            <input type="text" id="mouse" formControlName="mouse">
+            <label for="mouse">Souris  </label>
+            <input type="radio" name="mouseCheck" [(ngModel)]="mouseCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="mouseCheck" [(ngModel)]="mouseCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="mouseCheck" [(ngModel)]="mouseCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="mouse" formControlName="mouse" *ngIf="mouseCheck== 'me'">
         </div>
 
         <div>
-            <label for="inverter">Onduleur (batterie) : </label>
-            <input type="text" id="inverter" formControlName="inverter">
+            <label for="inverter">Onduleur (batterie)  </label>
+            <input type="radio" name="inverterCheck" [(ngModel)]="inverterCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="inverterCheck" [(ngModel)]="inverterCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="inverterCheck" [(ngModel)]="inverterCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="inverter" formControlName="inverter" *ngIf="inverterCheck== 'me'">
         </div>
     </div>
 
@@ -135,23 +196,32 @@
         <h2>Système d'exploitations et logiciels</h2>
 
         <div>
-            <label for="OS">Système d'exploitation : </label>
-            <input type="text" id="OS" formControlName="OS">
+            <label for="OS">Système d'exploitation  </label> 
+            <input type="radio" name="osCheck" [(ngModel)]="osCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="osCheck" [(ngModel)]="osCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="osCheck" [(ngModel)]="osCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="OS" formControlName="OS" *ngIf="osCheck== 'me'">
         </div>
     
         <div>
-            <label for="antivirus">Antivirus : </label>
-            <input type="text" id="antivirus" formControlName="antivirus">
+            <label for="antivirus">Antivirus  </label> 
+            <input type="radio" name="virusCheck" [(ngModel)]="virusCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="virusCheck" [(ngModel)]="virusCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="virusCheck" [(ngModel)]="virusCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="antivirus" formControlName="antivirus" *ngIf="virusCheck== 'me'">
         </div>
     
         <div>
-            <label for="microsoftOffice">microsoftOffice : </label>
-            <input type="text" id="microsoftOffice" formControlName="microsoftOffice">
+            <label for="microsoftOffice">microsoftOffice  </label> 
+            <input type="radio" name="officeCheck" [(ngModel)]="officeCheck" [ngModelOptions]="{standalone: true}" value="no" checked> Non
+            <input type="radio" name="officeCheck" [(ngModel)]="officeCheck" [ngModelOptions]="{standalone: true}" value="you"> Choisissez pour moi
+            <input type="radio" name="officeCheck" [(ngModel)]="officeCheck" [ngModelOptions]="{standalone: true}" value="me"> Je choisis
+            <input type="text" id="microsoftOffice" formControlName="microsoftOffice" *ngIf="officeCheck== 'me'">
         </div>
     </div>
 
     <div class="category">
-        <h2>Message complémentaire : </h2>
+        <h2>Message complémentaire  </h2>
         <label for="messages">Dites nous tout !</label><br>
         <textarea id="message" formControlName="message"></textarea>
     </div>
