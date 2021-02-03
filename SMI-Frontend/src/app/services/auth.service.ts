@@ -11,8 +11,10 @@ export class AuthService {
   private URL_REGISTER = "http://localhost:3000/users";
   private URL_LOGIN = "http://localhost:3000/auth/login";
   private URL_RESETPASSWORD = "http://localhost:3000/reset/sendMail";
+  private URL_ROLE = "http://localhost:3000/users/getOneMail/";
   private URL_NEWPASSWORD = "http://localhost:3000/reset/newPassword/";
   private URL_VERIFY_TOKEN = "http://localhost:3000/user";
+  public isAdmin = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -41,6 +43,7 @@ export class AuthService {
 
   logoutUser(){
     localStorage.removeItem('token');
+    this.userRole("none");
     this.router.navigate(['/']);
   }
 
@@ -50,6 +53,19 @@ export class AuthService {
 
   loggedIn(){
     return localStorage.getItem('token');
+  }
+
+  roleUser(){
+    var mail = this.getUserMail();
+    return this.http.get<any>(this.URL_ROLE + mail);
+  }
+
+  userRole(role: string){
+    if(role == 'admin'){
+      this.isAdmin = true;
+    }else{
+      this.isAdmin = false;
+    }
   }
 
   recover(resettoken: string, password: string): Observable<any> {
