@@ -18,6 +18,9 @@ import { ResponseResetPasswordComponent } from './response-reset-password/respon
 import { AuthService } from './services/auth.service';
 import { ProfilComponent } from './profil/profil.component';
 
+import { AgmCoreModule } from '@agm/core';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,10 @@ import { ProfilComponent } from './profil/profil.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAiGit6wi4ryhdr_x0n5OQZlYdHMov5pBg'
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

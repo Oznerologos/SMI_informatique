@@ -1,5 +1,5 @@
 .contact {
-    margin: 100px;
+
 }
 
 .contact{
@@ -32,17 +32,17 @@ i{
 
 
 .informations {
-    margin-top: 50px;
-    margin: 100px;
+    overflow: hidden; 
+    margin: 0px;
 }
 
 
 .socialnetworks-contact {
     width: 15%;
-    margin: 15px;
+   
 }
 
-.map {
+agm-map {
     width: 100%;
     height: 100%;
 }

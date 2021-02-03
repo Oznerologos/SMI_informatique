@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -10,20 +10,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class ContactComponent implements OnInit {
 
-  @ViewChild('map') mapElement: ElementRef;
-  map: google.maps.Map;
-
-  init(location, element){
-    let latLng = new google.maps.LatLng(location.latitude, location.longitude);
-
-    let opts = {
-      center: latLng,
-      zoom: 11,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    this.map = new google.maps.Map(element.nativeElement, opts);
-  }
+  lat = 43.455430537379996;
+  lng =  5.843966853442139;
 
   formContact = this.formBuilder.group({
     firstname: ['', Validators.required],
