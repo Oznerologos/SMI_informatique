@@ -8,18 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private URL_REGISTER = "http://localhost:3000/users";
-  private URL_LOGIN = "http://localhost:3000/auth/login";
-  private URL_RESETPASSWORD = "http://localhost:3000/reset/sendMail";
-  private URL_ROLE = "http://localhost:3000/users/getOneMail/";
-  private URL_NEWPASSWORD = "http://localhost:3000/reset/newPassword/";
-  private URL_VERIFY_TOKEN = "http://localhost:3000/user";
+  public URL_USER = "http://localhost:3000/users";
+  public URL_CONFIG = "http://localhost:3000/configs";
+  public URL_LOGIN = "http://localhost:3000/auth/login";
+  public URL_RESET = "http://localhost:3000/reset";
+  public URL_VERIFY_TOKEN = "http://localhost:3000/user";
   public isAdmin = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   register(user: {}){
-    return this.http.post<any>(this.URL_REGISTER, user);
+    return this.http.post<any>(this.URL_USER, user);
   }
 
   login(formLogin: any){
@@ -27,7 +26,7 @@ export class AuthService {
   }
 
   resetPassword(mail: any){
-    return this.http.post<any>(this.URL_RESETPASSWORD, mail);
+    return this.http.post<any>(this.URL_RESET + '/sendMail', mail);
   }
 
   getUserMail(){
@@ -57,7 +56,7 @@ export class AuthService {
 
   roleUser(){
     var mail = this.getUserMail();
-    return this.http.get<any>(this.URL_ROLE + mail);
+    return this.http.get<any>(this.URL_USER + '/getOneMail/' + mail);
   }
 
   userRole(role: string){
@@ -69,7 +68,7 @@ export class AuthService {
   }
 
   recover(resettoken: string, password: string): Observable<any> {
-    return this.http.post(this.URL_NEWPASSWORD + resettoken, {password});
+    return this.http.post(this.URL_RESET + '/newPassword/' + resettoken, {password});
   }
 
   verifyToken(item: any): Promise<any> {

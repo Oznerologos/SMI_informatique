@@ -19,7 +19,7 @@ export class User {
     mail: string;
 
     @Column()
-    phone: number;
+    phone: string;
 
     @Column()
     password: string;

@@ -1,0 +1,31 @@
+export interface IUser {
+  id: number;
+  name: string;
+  budget: number;
+  mounted: boolean;
+  cpu: string;
+  motherboard: string;
+  ram: number;
+  coolingsystem: string;
+  gpu: string;
+  ssd1: string;
+  ssd2: string;
+  hdd1: string;
+  hdd2: string;
+  cdplayerburner: string;
+  cardsplayers: string;
+  wifiboard: string;
+  case: string;
+  display1: string;
+  display2: string;
+  powerunit: string;
+  keyboard: string;
+  mouse: string;
+  os: string;
+  antivirus: string;
+  microsoftoffice: string;
+  soundboard: string;
+  inverter: string;
+  validated: boolean;
+  message: string;
+  }
