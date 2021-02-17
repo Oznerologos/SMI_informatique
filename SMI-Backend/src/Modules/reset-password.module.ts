@@ -15,8 +15,8 @@ import { jwtConstants } from 'src/auth/constants';
         port: 465,
         secure: true,
         auth: {
-          user: 'developpement1996@gmail.com',
-          pass: 'Developpement1996!',
+          user: 'noreply@smi83.com',
+          pass: 'smi083470',
         },
       },
       preview: true,
