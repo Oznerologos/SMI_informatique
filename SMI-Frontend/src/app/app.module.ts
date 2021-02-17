@@ -25,6 +25,9 @@ import { ConfigDetailsComponent } from './board/config/config-details/config-det
 import { ConfigFormComponent } from './board/config/config-form/config-form.component';
 import { ConfigListComponent } from './board/config/config-list/config-list.component';
 
+import { AgmCoreModule } from '@agm/core';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,10 @@ import { ConfigListComponent } from './board/config/config-list/config-list.comp
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAiGit6wi4ryhdr_x0n5OQZlYdHMov5pBg'
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
