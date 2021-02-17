@@ -21,6 +21,10 @@ export class ConfigsService {
       findAllWhereUser(id: number): Promise<Config[]> {
         return this.configsRepository.find({ where: {user: {id}}});
       }
+
+      findAllWhereUserAdmin(id: number): Promise<Config[]> {
+        return this.configsRepository.find({ where: {user: {id}, validated: 1}});
+      }
     
       findOne(id: number): Promise<Config> {
         return this.configsRepository.findOne(id);
