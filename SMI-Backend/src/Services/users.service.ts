@@ -14,6 +14,8 @@ export class UsersService {
   async create(user: User) {
     const hashed = await bcrypt.hash(user.password, 10);
     this.usersRepository.insert({ ...user, password: hashed });
+    const mail = user.mail;
+    return this.usersRepository.findOne({ where: { mail } });
   }
 
   findAll(): Promise<User[]> {
