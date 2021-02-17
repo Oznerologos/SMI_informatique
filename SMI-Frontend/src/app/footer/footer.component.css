@@ -1,4 +1,108 @@
-footer {
-    position: fixed;
-    bottom:0;
+#footerOne {
+    background-color: #575b98;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 90% 10%;
+    width: 100%;
+    height: auto;
+    padding-top: 2em;
+}
+
+#footerOne-one {
+    grid-column-start: 1;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#footerOne-two {
+    grid-column-start: 2;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#footerOne-three {
+    grid-column-start: 3;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#footerOne-four {
+    grid-column-start: 4;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#footerTwo {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.img-smi{
+    width: 80%;
+}
+
+#footerOne-two h3{
+    color: white;
+}
+
+.favicon{
+    width: 2em;
+}
+
+#footerOne-two a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#footerOne-three h3{
+    color: white;
+}
+
+#footerOne-three span{
+    color: white;
+    display: block;
+    width: 20em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contacter{
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+#footerOne-four h3{
+    color: white;
+    margin-bottom: -0.5em;
+}
+
+#footerOne-four span{
+    color: white;
+}
+
+.inputNew{
+    width: 100%;
+    border-radius: 0.7em;
+    border-color: transparent;
+}
+
+.footerOrange{
+    margin-top: 1em;
+    border-radius: 0.7em;
+    border-color: #ee7412;
+    background-color: #ee7412;
+    float: right;
+}
+
+.fbNew{
+    width: 80%;
 }

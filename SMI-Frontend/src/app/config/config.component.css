@@ -1,0 +1,19 @@
+.category{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+
+.item{
+    background-color: #F3F3F3;
+    grid-column: span 2;
+}
+
+.item:nth-last-child(1):nth-child(odd){
+    grid-column: 2 / span 2;
+}
+
+.item label{
+    background-color: #ee7412;
+}
+
