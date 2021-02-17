@@ -104,7 +104,7 @@ export class LoginregisterComponent implements OnInit {
     //Envoie du formulaire
     this.auth.resetPassword(mailEnvoie).subscribe(
       data =>{
-        localStorage.setItem('token', data.token);
+        alert('Email envoyé');
         this.router.navigate(['/']);
       },
       err => {
