@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { AlertService } from '@full-fledged/alerts';
 import { HttpHeaders } from '@angular/common/http';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-config',
@@ -12,12 +13,14 @@ import { HttpHeaders } from '@angular/common/http';
 export class ConfigComponent implements OnInit {
 
   constructor(
+    private user: AuthService,
     private formBuilder: FormBuilder,
     private alertService : AlertService,
     private http : HttpClient,
   ) {}
 
   ngOnInit(): void {
+    console.log(this.user.getUserId())
   }
 
   httpOptions = {
@@ -54,7 +57,8 @@ export class ConfigComponent implements OnInit {
     inverter: '',
     message:'',
     soundboard:'',
-    validated:''
+    validated:'',
+    user:''
   })
 
 
@@ -82,8 +86,7 @@ export class ConfigComponent implements OnInit {
   virusCheck = "no";
   officeCheck = "no";
   
-
-  
+  currentStep = 1;
 
   onSubmit(validated:boolean): void {
 
@@ -234,6 +237,7 @@ export class ConfigComponent implements OnInit {
 
 
     if (this.configForm.controls["name"].value != "" && this.configForm.controls["budget"].value != "" && this.configForm.controls["mounted"].value != "" ) {
+      this.configForm.controls['user'].setValue(this.user.getUserId())
       this.http.post("http://localhost:3000/configs" ,this.configForm.value, this.httpOptions).subscribe()
       console.log(this.configForm.value)
     } else {
@@ -247,5 +251,9 @@ export class ConfigComponent implements OnInit {
         this.alertService.warning("Remplissez le montage de la config")
       }
     }
+  }
+
+  step(value:number){
+    this.currentStep = this.currentStep + value;
   }
 }
