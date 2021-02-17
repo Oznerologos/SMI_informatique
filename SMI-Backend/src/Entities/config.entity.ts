@@ -46,7 +46,7 @@ export class Config {
     hdd2: string;
 
     @Column()
-    cdPlayerburner: string;
+    cdplayerburner: string;
 
     @Column()
     cardsplayers: string;
@@ -82,7 +82,7 @@ export class Config {
     microsoftoffice: string;
 
     @Column()
-    soundCard: string;
+    soundboard: string;
 
     @Column()
     inverter: string;
