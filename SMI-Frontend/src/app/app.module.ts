@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
+import { AlertModule } from "@full-fledged/alerts";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,8 +27,7 @@ import { ConfigDetailsComponent } from './board/config/config-details/config-det
 import { ConfigFormComponent } from './board/config/config-form/config-form.component';
 import { ConfigListComponent } from './board/config/config-list/config-list.component';
 
-import { AgmCoreModule } from '@agm/core';
-
+import { AgmCoreModule } from '@agm/core'; 
 
 @NgModule({
   declarations: [
@@ -54,6 +55,8 @@ import { AgmCoreModule } from '@agm/core';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right'}),
     NgbModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAiGit6wi4ryhdr_x0n5OQZlYdHMov5pBg'

@@ -22,7 +22,7 @@ export class ResetPasswordService {
 
     var mailOptions = {
       to: user.mail,
-      from: 'developpement1996@gmail.com',
+      from: 'noreply@smi83.com',
       subject: 'Réinitialisation de votre mot de passe',
       text:
         "Vous recevez ce message parce que vous (ou quelqu'un d'autre) avez demandé la réinitialisation du mot de passe de votre compte.\n\n" +
