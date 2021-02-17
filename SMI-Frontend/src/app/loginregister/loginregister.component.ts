@@ -25,6 +25,7 @@ export class LoginregisterComponent implements OnInit {
   });
 
   public error: string;
+  public isAdmin: boolean;
   submitted = false;
   submittedLog = false;
 
@@ -53,6 +54,7 @@ export class LoginregisterComponent implements OnInit {
         data =>{
           if(data.access_token != null || data.access_token != undefined){
             localStorage.setItem('token', data.access_token);
+            this.auth.userRole("none");
             this.router.navigate(['/']);
           }
         },
@@ -80,6 +82,11 @@ export class LoginregisterComponent implements OnInit {
       data =>{
         if(data.access_token != null || data.access_token != undefined){
           localStorage.setItem('token', data.access_token);
+          this.auth.roleUser().subscribe(
+            data =>{
+              this.auth.userRole(data.role);
+            }
+          );
           this.router.navigate(['/']);
         }
       },

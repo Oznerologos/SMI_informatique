@@ -10,6 +10,7 @@
         <a routerLink="/Config">Configuration avancée</a>
         <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin">Inscription/Connexion</a>
         <a *ngIf="authService.loggedIn()" routerLink="/profil">Profil</a>
+        <a *ngIf="authService.isAdmin" routerLink="/profil">Administration</a>
         <a *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Déconnexion</a>
     </div>
 </div>

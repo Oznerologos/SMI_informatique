@@ -1,0 +1,55 @@
+<div class="card" style="width: 18rem; margin: 2rem;" *ngIf="existUser">
+    <div class="card-body">
+        <p class="card-text">Prenom : {{ dataUser.firstname }}</p>
+        <p class="card-text">Nom : {{ dataUser.lastname }}</p>
+        <p class="card-text">Email : {{ dataUser.mail }}</p>
+        <p class="card-text">Phone : {{ dataUser.phone }}</p>
+        <p class="card-text">Role : {{ dataUser.role }}</p>
+    </div>
+    <button class="button" (click)="retour()">Retour</button>
+</div>
+<div>
+    <button class="btn btn-primary" type="button" (click)="onAdd()">
+        Ajouter une Configuration
+    </button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Budget</th>
+                <th scope="col">Monté</th>
+                <th scope="col">Cpu</th>
+                <th scope="col">Carte Mère</th>
+                <th scope="col">Ram</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let config of listConfigs; index as i">
+                <td>
+                    {{ config.id }}
+                </td>
+                <td>
+                    <a [routerLink]="['/configDetails/', config.id]">
+                        {{ config.budget }}
+                    </a>
+                </td>
+                <td>{{ config.mounted }}</td>
+                <td>{{ config.cpu }}</td>
+                <td>
+                    {{ config.motherboard }}
+                </td>
+                <td>
+                    {{ config.ram }}
+                </td>
+                <td>
+                    <button class="btn btn-info" type="submit" (click)="onUpdate(config.id)">
+                        Modifier</button>
+                    <button class="btn btn-danger" type="button" (click)="onDelete(config.id)">
+                        Supprimer
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

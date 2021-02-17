@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem; margin: 2rem;" *ngIf="existConfig">
+    <div class="card-body">
+        <p class="card-text">Budget : {{ dataConfig.budget }}</p>
+        <p class="card-text">Monté : {{ dataConfig.mounted }}</p>
+        <p class="card-text">Cpu : {{ dataConfig.cpu }}</p>
+        <p class="card-text">Carte Mère : {{ dataConfig.motherboard }}</p>
+        <p class="card-text">Ram : {{ dataConfig.ram }}</p>
+    </div>
+    <button class="button" (click)="retour()">Retour</button>
+</div>
