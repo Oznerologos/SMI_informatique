@@ -29,7 +29,6 @@ import { ConfigListComponent } from './board/config/config-list/config-list.comp
 
 import { AgmCoreModule } from '@agm/core'; 
 
-
 @NgModule({
   declarations: [
     AppComponent,
