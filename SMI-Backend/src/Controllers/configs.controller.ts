@@ -15,6 +15,11 @@ export class ConfigsController {
     findAll() {
       return this.configsService.findAll();
     }
+
+    @Get('/user/:id')
+    findAllWhereUser(@Param() params): Promise<Config[]> {
+      return this.configsService.findAllWhereUser(params.id);
+    }
   
     @Get(':id')
     findOne(@Param('id') id: number) {
