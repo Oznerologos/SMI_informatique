@@ -45,8 +45,8 @@ export class LoginregisterComponent implements OnInit {
     }
 
     //Vérification du mot de passe
-    var psw = (<HTMLInputElement>document.getElementById("password")).value;
-    var pswRepeat = (<HTMLInputElement>document.getElementById("passwordVerif")).value;
+    var psw = (<HTMLInputElement>document.getElementById("passwordRegister")).value;
+    var pswRepeat = (<HTMLInputElement>document.getElementById("passwordVerifRegister")).value;
     
     if(psw == pswRepeat && psw !=''){
       //Envoie du formulaire
