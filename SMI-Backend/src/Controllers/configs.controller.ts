@@ -9,6 +9,7 @@ export class ConfigsController {
     @Post()
     create(@Body() config: Config) {
       this.configsService.create(config);
+      return config;
     }
   
     @Get()
@@ -29,6 +30,7 @@ export class ConfigsController {
     @Put(':id')
     update(@Param('id') id: number, @Body() config: Config) {
       this.configsService.update(id, config);
+      return config;
     }
   
     @Delete(':id')
