@@ -80,11 +80,29 @@
     grid-template-columns: 10% 90%;
 }
 
+#footerOne-four h3{
+    color: white;
+    margin-bottom: -0.5em;
+}
+
+#footerOne-four span{
+    color: white;
+}
+
 .inputNew{
-    width: 80%;
-    border-radius: 2em;
+    width: 100%;
+    border-radius: 0.7em;
+    border-color: transparent;
 }
 
 .footerOrange{
+    margin-top: 1em;
+    border-radius: 0.7em;
+    border-color: #ee7412;
     background-color: #ee7412;
+    float: right;
+}
+
+.fbNew{
+    width: 80%;
 }
