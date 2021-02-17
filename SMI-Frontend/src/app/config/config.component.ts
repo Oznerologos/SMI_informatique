@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
+import { AlertService } from '@full-fledged/alerts';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-config',
@@ -7,6 +10,16 @@ import { FormBuilder } from "@angular/forms";
   styleUrls: ['./config.component.css']
 })
 export class ConfigComponent implements OnInit {
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private alertService : AlertService,
+    private http : HttpClient,
+  ) {}
+
+  ngOnInit(): void {
+  }
+
   configForm = this.formBuilder.group({
     name: '', 
     budget: '',
@@ -37,6 +50,7 @@ export class ConfigComponent implements OnInit {
     soundBoard:'',
   })
 
+
   mbCheck = "no";
   procCheck = "no";
   gpuCheck = "no";
@@ -62,9 +76,7 @@ export class ConfigComponent implements OnInit {
   officeCheck = "no";
   
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) {}
+  
 
   onSubmit(): void {
 
@@ -209,13 +221,19 @@ export class ConfigComponent implements OnInit {
     if (this.officeCheck == "you") {
       this.configForm.controls['microsoftOffice'].setValue("Choisissez pour moi !");
     }
-    
-    console.log(this.configForm.value)
-  }
 
-  ngOnInit(): void {
+    if (this.configForm.controls["name"].value != "" && this.configForm.controls["budget"].value != "" && this.configForm.controls["mounted"].value != "" ) {
+      this.http.post<any>("https://localhost:3000/configs" ,this.configForm.value)
+    } else {
+      if (this.configForm.controls["name"].value == "") {
+        this.alertService.warning('Remplissez le nom de la config')
+      }
+      if (this.configForm.controls["budget"].value == "") {
+        this.alertService.warning("Remplissez le budget de la config")
+      }
+      if (this.configForm.controls["mounted"].value == "") {
+        this.alertService.warning("Remplissez le montage de la config")
+      }
+    }
   }
- //TEST GIT MERGE 
-
-  
 }
