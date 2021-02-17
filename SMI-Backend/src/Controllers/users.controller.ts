@@ -10,11 +10,11 @@ export class UsersController {
   @Post('')
   async create(@Body() user: User) {
     var existingUser = await this.usersService.findOneByMail(user.mail);
-    const payload = { mail: user.mail, sub: user.id };
     if (existingUser != undefined) {
       return 'Cet email existe déjà';
     } else {
-      this.usersService.create(user);
+      user = await this.usersService.create(user);
+      const payload = { mail: user.mail, sub: user.id };
       return {
         user: user.mail,
         access_token: this.jwtService.sign(payload),
