@@ -11,12 +11,12 @@ import { jwtConstants } from 'src/auth/constants';
   imports: [
     MailerModule.forRoot({
       transport: {
-        host: 'smtp.googlemail.com',
+        host: 'ssl0.ovh.net',
         port: 465,
         secure: true,
         auth: {
-          user: 'developpement1996@gmail.com',
-          pass: 'Developpement1996!',
+          user: 'noreply@smi83.com',
+          pass: 'smi083470',
         },
       },
       preview: true,
