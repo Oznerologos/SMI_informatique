@@ -5,7 +5,7 @@
 }
 
 .item{
-    background-color: #F3F3F3;
+    margin: 20px 0;
     grid-column: span 2;
 }
 
@@ -13,7 +13,76 @@
     grid-column: 2 / span 2;
 }
 
-.item label{
+.item .label{
     background-color: #ee7412;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    width: 75%;
+    border-radius: 50px;
+    margin: 0 auto;
+    
 }
+
+.item .label label{
+    margin : 10px auto;
+    display: inline-block;
+    padding-left: 50px;
+}
+
+.item .input{
+    width: 60%;
+    margin: 0 auto;
+    background-color: #E5E4E4;
+    padding: 1% 5% 1% 5%;
+    vertical-align: middle;
+    display: grid;
+    grid-template-columns: 44px auto ;
+}
+
+.item .input input[type=radio]{
+    margin-right: 20px;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.item .input input[type=text]{
+    margin-top: 10px;
+    grid-column : span 2;
+    text-align: center;
+    border: 0;
+    border-radius: 50px;
+}
+
+.item .input textarea{
+    margin-top: 10px;
+    grid-column : span 2;
+    text-align: center;
+    border: 0;
+    border-radius: 10px;
+}
+
+.item .input input[type=number]{
+    grid-column : span 2;
+    border: 0;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.item .input div{
+    display: inline-block;
+    margin: auto 0;
+}
+
+.item > div:last-child.input{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-bottom:15px;
+}
+
+
+
+.me{
+    text-align: left  !important;
+}
+
 
