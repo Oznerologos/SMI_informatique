@@ -2,6 +2,7 @@
     background-color: #575b98;
     display: grid;
     grid-template-columns: 20% 50% 10% 10% 10%;
+    grid-template-rows: 70% 30%;
     width: 100%;
     height: auto;
 }
@@ -92,19 +93,32 @@
     cursor: pointer;
 } 
 
-#headerTwo {
+/* #headerTwo {
     background-color: white;
     display: grid;
     grid-template-columns: 100%;
     margin-top: 2em;
     height: auto;
+} */
+
+#headerTwo {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: white;
 }
 
 #headerTwo-one {
     grid-column-start: 1;
     text-align: center;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 2em;
 }
 
 #headerTwo-one a{
