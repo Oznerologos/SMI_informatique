@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { AlertService } from '@full-fledged/alerts';
 import { HttpHeaders } from '@angular/common/http';
@@ -17,10 +17,13 @@ export class ConfigComponent implements OnInit {
     private formBuilder: FormBuilder,
     private alertService : AlertService,
     private http : HttpClient,
+    private elementRef: ElementRef
   ) {}
 
   ngOnInit(): void {
-    console.log(this.user.getUserId())
+    
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#F3F3F3';
+    this.currentStep = 1;
   }
 
   httpOptions = {
