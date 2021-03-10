@@ -13,6 +13,7 @@ import { UserFormComponent } from './board/user/user-form/user-form.component';
 import { UserListComponent } from './board/user/user-list/user-list.component';
 import { ConfigDetailsComponent } from './board/config/config-details/config-details.component';
 import { ConfigListComponent } from './board/config/config-list/config-list.component';
+import { ConfigFormComponent } from './board/config/config-form/config-form.component';
 
 const routes: Routes = [
   {path: 'Config', component: ConfigComponent},
@@ -51,6 +52,19 @@ const routes: Routes = [
   {
     path: 'configDetails/:id',
     component: ConfigDetailsComponent,
+  },
+  {
+    path: 'configForm',
+    children: [
+      {
+        path: '',
+        component: ConfigFormComponent,
+      },
+      {
+        path: ':id',
+        component: ConfigFormComponent,
+      },
+    ],
   },
 ];
 

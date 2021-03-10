@@ -46,7 +46,6 @@ export class AuthService {
     const tokenSplited = splitToken[1];
     const tokenDecodeB64 = atob(tokenSplited);
     const parseToken = JSON.parse(tokenDecodeB64);
-    console.log(parseToken);
     const userId = parseToken.sub; //Id
     return userId;
   }
