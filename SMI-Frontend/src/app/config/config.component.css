@@ -17,7 +17,7 @@
     background-color: #ee7412;
     color: white;
     font-family: 'Roboto', sans-serif;
-    width: 75%;
+    width: 60%;
     border-radius: 50px;
     margin: 0 auto;
     
@@ -30,7 +30,7 @@
 }
 
 .item .input{
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     background-color: #E5E4E4;
     padding: 1% 5% 1% 5%;
@@ -84,3 +84,13 @@
 }
 
 
+h2{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 1em;
+}

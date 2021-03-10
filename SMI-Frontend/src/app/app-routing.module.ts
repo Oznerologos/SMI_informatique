@@ -13,6 +13,8 @@ import { UserFormComponent } from './board/user/user-form/user-form.component';
 import { UserListComponent } from './board/user/user-list/user-list.component';
 import { ConfigDetailsComponent } from './board/config/config-details/config-details.component';
 import { ConfigListComponent } from './board/config/config-list/config-list.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: 'Config', component: ConfigComponent},
@@ -52,6 +54,8 @@ const routes: Routes = [
     path: 'configDetails/:id',
     component: ConfigDetailsComponent,
   },
+  {path: 'newsletter', component: NewsletterComponent},
+  {path: 'login', component: LoginComponent},
 ];
 
 @NgModule({

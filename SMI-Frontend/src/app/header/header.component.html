@@ -1,30 +1,32 @@
-<div id="headerOne">
-    <div id="headerOne-one" >
-        <!-- <a routerLink="/" class="logo">SMI Informatique</a> -->
-        <a routerLink="/"><img class="img-smi" src="../../assets/img/smi.png" alt="Logo Smi"></a>
+<div *ngIf="router == '/login'">
+    <div id="headerOne">
+        <div id="headerOne-one" >
+            <!-- <a routerLink="/" class="logo">SMI Informatique</a> -->
+            <a routerLink="/"><img class="img-smi" src="../../assets/img/smi.png" alt="Logo Smi"></a>
+        </div>
+        <div id="headerOne-two">
+            <a routerLink="/">Accueil</a>
+            <a routerLink="/about">À propos de nous</a>
+            <a routerLink="/contact">Contact</a>
+            <a routerLink="/newsletter">Newsletter</a>
+        </div>
+        <div id="headerOne-three">
+            <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin" class="BleuBlanc">Se connecter</a>
+            <a *ngIf="authService.isAdmin" routerLink="/userList" class="BleuBlanc">Administration</a>
+        </div>
+        <div id="headerOne-four">
+            <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin" class="Orange">S'inscrire</a>
+            <a *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" class="Orange">Se déconnecter</a>
+        </div>
+        <div id="headerOne-five">
+            <a *ngIf="authService.loggedIn()" routerLink="/profil"><img class="img-profil" src="../../assets/img/profilTest.jpg" alt="Image de profil">
+            <p>Jean Ferro</p></a>
+        </div>
     </div>
-    <div id="headerOne-two">
-        <a routerLink="/">Accueil</a>
-        <a routerLink="/about">À propos de nous</a>
-        <a routerLink="/contact">Contact</a>
-        <a>Newsletter</a>
-    </div>
-    <div id="headerOne-three">
-        <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin" class="BleuBlanc">Se connecter</a>
-        <a *ngIf="authService.isAdmin" routerLink="/profil" class="BleuBlanc">Administration</a>
-    </div>
-    <div id="headerOne-four">
-        <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin" class="Orange">S'inscrire</a>
-        <a *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" class="Orange">Se déconnecter</a>
-    </div>
-    <div id="headerOne-five">
-        <a *ngIf="authService.loggedIn()" routerLink="/profil"><img class="img-profil" src="../../assets/img/profilTest.jpg" alt="Image de profil">
-        <p>Nom Prénom</p></a>
-    </div>
-</div>
-<div id="headerTwo">
-    <div id="headerTwo-one">
-        <a routerLink="/EZConfig" class="BleuBlanc">Configuration simple</a>
-        <a routerLink="/Config" class="Orange">Configuration avancée</a>
+    <div id="headerTwo">
+        <div id="headerTwo-one" *ngIf="authService.loggedIn()">
+            <a routerLink="/EZConfig" class="BleuBlanc">Configuration simple</a>
+            <a routerLink="/Config" class="Orange">Configuration avancée</a>
+        </div>
     </div>
 </div>
