@@ -1,5 +1,5 @@
 <ff-alerts></ff-alerts>
-<form [formGroup]="configForm">
+<form [formGroup]="configForm" class="config">
 
     <h2>Configuration Avancée</h2>
     <p>Bonjour et bienvenue sur notre simulateur avancé !</p>
@@ -520,18 +520,24 @@
 
         <h2>Message complémentaire </h2>
         <div class="category item">
-            <div>
+            <div class="message">
                 <div class="label"><label for="messages">Dites nous tout !</label><br></div>
-                <textarea id="message" formControlName="message"></textarea>
+                <textarea id="message" formControlName="message" rows="10"></textarea>
             </div>
         </div>
 
-        <button class="button" type="submit" (click)="onSubmit(true)"> Reserver </button>
-        <button class="button" type="submit" (click)="onSubmit(false)"> Sauvegarder </button>
-
+        <div class="submit">
+            <button class="button" type="submit" (click)="onSubmit(true)"> Réserver </button>
+            <button class="button" type="submit" (click)="onSubmit(false)"> Sauvegarder </button>
+        </div>
     </div>
 
-    <button (click)="step(-1)" *ngIf="currentStep !=1">Page précédente</button>
-    <button (click)="step(1)" *ngIf="currentStep !=4">Page suivante</button>
+    <div class="steps">
+        <button class="previous" (click)="step(-1)" *ngIf="currentStep !=1"><i class="fas fa-arrow-left"></i> Page
+            précédente</button>
+        <span class="currentStep">Page {{currentStep}} sur 4</span>
+        <button class="next" (click)="step(1)" *ngIf="currentStep !=4">Page suivante <i
+                class="fas fa-arrow-right"></i></button>
+    </div>
 
 </form>
