@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -10,12 +10,12 @@ import { AuthService } from '../services/auth.service';
 })
 export class ContactComponent implements OnInit {
 
-  lat = 43.455430537379996;
-  lng =  5.843966853442139;
 
   formContact = this.formBuilder.group({
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
+    number: ['', Validators.required],
+    society: ['', Validators.required],
     mail: ['', [Validators.required, Validators.email]],
     message: ['', Validators.required],
   });
@@ -24,7 +24,15 @@ export class ContactComponent implements OnInit {
   submitted = false;
   submittedLog = false;
 
-  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private auth: AuthService, 
+    private router: Router
+    )
+  { }
+
+
+  
 
   ngOnInit(): void {
     this.error = "";
@@ -66,6 +74,12 @@ export class ContactComponent implements OnInit {
     return this.formContact.get('lastname');
   }
 
+  get society() {
+    return this.formContact.get('societé');
+  }
+  get number() {
+    return this.formContact.get('numéro');
+  }
   get mail() {
     return this.formContact.get('mail');
   }
