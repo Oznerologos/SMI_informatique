@@ -124,7 +124,6 @@
 #headerTwo-one a{
     padding: 0.5em 1em 0.5em 1em;
     text-decoration: none;
-    margin-right: 3em;
     border-radius: 0.6em;
     color: white;
 }
@@ -132,9 +131,11 @@
 #headerTwo-one .BleuBlanc{
     background-color: #575b98;
     border: 1px solid #575b98;
+    margin-right: 1.5em;
 }
 
 #headerTwo-one .Orange{
     border: 1px solid #ee7412;
     background-color: #ee7412;
+    margin-left: 1.5em;
 }

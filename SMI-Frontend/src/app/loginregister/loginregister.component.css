@@ -3,20 +3,20 @@
 }
 
 .box-register{
-    position: absolute;
+    /*position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #1E1E1E;
-    box-sizing: border-box;
+    left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+    /* background: #1E1E1E; */
+    /* box-sizing: border-box;
     box-shadow: 0 1em 1.5em black;
-    border-radius: 0.7em;
+    border-radius: 0.7em; */
     padding: 2em;
 }
 
 .title-register{
     margin-bottom: 1em;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -26,24 +26,24 @@
 
 .form-register label{
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .box-login{
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #1E1E1E;
-    box-sizing: border-box;
+    left: 50%; */
+    /*transform: translate(-50%, -50%);*/
+    /* background: #1E1E1E; */
+    /* box-sizing: border-box;
     box-shadow: 0 1em 1.5em black;
-    border-radius: 0.7em;
+    border-radius: 0.7em; */
     padding: 2em;
 }
 
 .title-login{
     margin-bottom: 1em;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -53,7 +53,7 @@
 
 .form-login label{
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .button{
@@ -63,7 +63,7 @@
     margin: 0.5em auto;
     position: relative;
     width: 100%;
-    background-color: lightblue;
+    background-color: #575b98;
     cursor: pointer;
 }
 
@@ -72,11 +72,11 @@
 }
 
 .resetPassword{
-    color: white;
+    color: black;
 }
 
 i{
-    color: white;
+    color: black;
 }
 
 .invalid{
