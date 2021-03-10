@@ -1,4 +1,4 @@
-<div *ngIf="router == '/login'">
+<div *ngIf="!isRouteLogin() && !isRouteRegister()">
     <div id="footerOne">
         <div id="footerOne-one" >
             <a routerLink="/"><img class="img-smi" src="../../assets/img/smi.png" alt="Logo Smi"></a>

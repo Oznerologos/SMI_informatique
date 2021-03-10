@@ -1,4 +1,4 @@
-<div *ngIf="router == '/login'">
+<div *ngIf="!isRouteLogin() && !isRouteRegister()">
     <div id="headerOne">
         <div id="headerOne-one" >
             <!-- <a routerLink="/" class="logo">SMI Informatique</a> -->
@@ -11,16 +11,16 @@
             <a routerLink="/newsletter">Newsletter</a>
         </div>
         <div id="headerOne-three">
-            <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin" class="BleuBlanc">Se connecter</a>
+            <a *ngIf="!authService.loggedIn()" routerLink="/login" class="BleuBlanc">Se connecter</a>
             <a *ngIf="authService.isAdmin" routerLink="/userList" class="BleuBlanc">Administration</a>
         </div>
         <div id="headerOne-four">
-            <a *ngIf="!authService.loggedIn()" routerLink="/registerLogin" class="Orange">S'inscrire</a>
+            <a *ngIf="!authService.loggedIn()" routerLink="/register" class="Orange">S'inscrire</a>
             <a *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" class="Orange">Se déconnecter</a>
         </div>
         <div id="headerOne-five">
             <a *ngIf="authService.loggedIn()" routerLink="/profil"><img class="img-profil" src="../../assets/img/profilTest.jpg" alt="Image de profil">
-            <p>Jean Ferro</p></a>
+            <p>Prénom Nom</p></a>
         </div>
     </div>
     <div id="headerTwo">

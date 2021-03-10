@@ -1,0 +1,116 @@
+#page {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 100%;
+    height: 100vh;
+}
+
+#one{
+    background-image: url("../../assets/img/register.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#two{
+    height: 100%;
+    margin-left: 8em;
+}
+
+#form-register{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+}
+
+.img-register{
+    width: 30em;
+}
+
+#rowOne1{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#rowOne2{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+
+#rowTwo1{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+#rowTwo2{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#rowThree1{
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+#rowThree2{
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+#rowFour{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    margin-top: 2em;
+}
+
+
+.title-register{
+    color: #575b98;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.form-register{
+    width: 100%;
+}
+
+.form-register input{
+    width: 70%;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 12px;
+    border: transparent;
+    background-color: lightgray;
+}
+
+.form-register label{
+    width: 48%;
+    float: left;
+    color: gray;
+    margin-top: 1em;
+}
+
+.button{
+    margin-top: 6em;
+    background-color: #575b98;
+    border: 1px solid #575b98;
+    color: white;
+    padding: 0.5em 3.5em;
+    border-radius: 50px;
+    float: right;
+}
+
+i{
+    color: black;
+    cursor: pointer;
+}
+
+.form-register p{
+    width: 100%;
+    color: red;
+}
+
+.invalid{
+    color: red;
+}

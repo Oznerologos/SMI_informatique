@@ -15,6 +15,7 @@ import { ConfigDetailsComponent } from './board/config/config-details/config-det
 import { ConfigListComponent } from './board/config/config-list/config-list.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path: 'Config', component: ConfigComponent},
@@ -56,6 +57,7 @@ const routes: Routes = [
   },
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
 ];
 
 @NgModule({

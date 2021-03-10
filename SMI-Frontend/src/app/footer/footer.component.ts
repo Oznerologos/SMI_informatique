@@ -13,4 +13,11 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isRouteLogin() {
+    return this.router.url === '/login';
+  }
+  
+  isRouteRegister() {
+    return this.router.url === '/register';
+  }
 }

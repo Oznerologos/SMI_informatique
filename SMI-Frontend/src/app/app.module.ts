@@ -31,6 +31,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AdminService } from './services/admin.service';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { LoginComponent } from './login/login.component';
     ConfigFormComponent,
     ConfigListComponent,
     NewsletterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
