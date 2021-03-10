@@ -2,7 +2,8 @@
 
 .main p, a{
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
 }
 
 
@@ -14,11 +15,15 @@
     left:0px;
     display: flex;
     align-items: center;
-}
-img.img-header {
-    max-height: 600px; 
+    background-image: url(../../assets/img/main/main.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 600px; 
     width: 100%;
 }
+
 
 .presentation {
     margin-left: 50%;
@@ -27,14 +32,18 @@ img.img-header {
     position: absolute;
     z-index: 1000;
     background-color: white; 
+    box-shadow: 7px 7px 7px 1px rgba(99, 99, 99, 0.32);
+    -webkit-box-shadow: 7px 7px 7px 1px  rgba(99, 99, 99, 0.32);
+    -moz-box-shadow: 7px 7px 7px 1px  rgba(99, 99, 99, 0.32);
+
 }
-.presentation img.logo-header {
-    width: 60%;
-    height: 60%; 
+
+.presentation img {
+    width: 75%;
+    height: 75%; 
+    margin-left: -4.8%;
 }
-.presentation p {
-  
-}
+
 .presentation a {
     display: inline-block;
     margin-bottom: 10px;
@@ -42,16 +51,26 @@ img.img-header {
     padding: 10px;
     background: #575b98;
     color: white;
+    box-shadow: 10px 10px 7px 1px rgba(230,230,230,0.62);
+    -webkit-box-shadow: 10px 10px 7px 1px rgba(230,230,230,0.62);
+    -moz-box-shadow: 10px 10px 7px 1px rgba(230,230,230,0.62);
 }
 
 /* HEADER RESPONSIVE */ 
+
+@media screen and (min-width: 2040px)
+{
+    img.img-header {
+        max-height: 700px; 
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 980px)
 {
     .presentation {
         margin-left: 40%;
         margin-right: 10%;
-        padding: 40px;
         position: absolute;
         z-index: 1000;
         background-color: white; 
@@ -65,7 +84,7 @@ img.img-header {
 @media screen and (max-width: 680px)
 {
     .presentation {
-        margin-left: 20%;
+        margin-left: 10%;
         margin-right: 10%;
         padding: 30px;
         position: absolute;
@@ -79,50 +98,97 @@ img.img-header {
 /* CONFIGURATION */
 
 .configuration {
-    padding: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: center;
+
 }
 .div-configurations{
     background-color: rgb(248, 248, 248);
-    display: grid;
+    overflow: hidden;
+    height: 200px;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 7px 1px rgba(230,230,230,0.62);
+    -webkit-box-shadow: 10px 10px 7px 1px rgba(230,230,230,0.62);
+    -moz-box-shadow: 10px 10px 7px 1px rgba(230,230,230,0.62);
+    
 }
 
 
-.div-configurations img {
-    width: 200px;
-    grid-column: 1; /* placement en colonne 1 */
+.div-configurations .img {
+    width: 35%;
+    height: 100%;
+    float: left;
 }
 
-.div-configurations text {
-    grid-column: 2; /* placement en colonne 1 */
+div.img-advanced {
+    background-image: url(../../assets/img/main/img-conf-advanded.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+div.img-simple {
+    background-image: url(../../assets/img/main/img-conf-simple.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-div.main a {
-    list-style: none;
-    color: black
+.div-configurations .text {
+    width: 65%;
+    height: 100%;
+    padding: 0 30px 0 30px;
+    float: right;
+    display: table;
+    
 }
-div.main a:hover {
-    text-decoration: none;
+
+.line {
+    width: 90%;
+	height: 1px;
+    background-color:  #575b98;
+    margin-top: 5px;
 }
 
+.div-configurations p {
+    display: table-cell;
+    vertical-align: middle;
+    word-break:keep-all;
 
+}
 
-
-@media screen and (max-width: 1280px)
-{
-    div.configuration {
-        display: flex;
-        padding-top: 150px;
-        padding-bottom: 150px;
-    }
+.div-configurations a {
+    color: black;
 }
 
 
 /* RESPONSIVE CONFIGURATION */ 
 
-@media screen and (min-width: 2040px)
+@media screen and (max-width: 1228px)
 {
-    img.img-header {
-        max-height: 700px; 
-        width: 100%;
+    div.configuration {
+        display: block;
     }
 }
+
+@media screen and (max-width: 658px)
+{
+    div.configuration {
+        display: block;
+    }
+    .configuration {
+       padding-left: 10px;
+       padding-right: 10px;
+    }
+    .div-configurations .text {   
+        padding: 10px;
+    }
+
+}
+
