@@ -1,0 +1,37 @@
+<div id="page">
+    <div id="one">
+
+    </div>
+    <div id="two">
+        <img class="img-login" src="../../assets/img/smi_sans_fond.png" alt="Image Login">
+        <h2 class="title-login">Connexion</h2>
+
+        <form class="form-login" [formGroup]="formLogin" (ngSubmit)="submitLogin()">
+            <div class="form-login">
+                <label for="mail">E-mail*</label><br>
+                <input type="email" name="mail" id="mailLogin" formControlName="mail" [ngClass]="{ 'is-invalid': submittedLog && mailLog.errors }">
+                <div *ngIf="submittedLog && mailLog.errors" class="invalid">
+                    <div *ngIf="mailLog.errors.required">
+                        Le mail est requis
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-login">
+                <label for="password">Mot de passe*</label><br>
+                <input type="password" name="password" id="passwordLogin" formControlName="password" [ngClass]="{ 'is-invalid': submittedLog && passwordLog.errors }">
+                <div *ngIf="submittedLog && passwordLog.errors" class="invalid">
+                    <div *ngIf="passwordLog.errors.required">
+                        Le mot de passe est requis
+                    </div>
+                </div>
+            </div>
+    
+            <a class="resetPassword" style="cursor: pointer" (click)="resetPassword()">Mot de passe oublié ?</a>
+            <p class="error" *ngIf="error != ''"> {{error}}</p>
+
+            <button type="submit" class="button">Se connecter</button> 
+            <i>* : Informations obligatoires</i> 
+        </form>
+    </div>
+</div>

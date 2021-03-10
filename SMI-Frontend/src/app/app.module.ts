@@ -29,6 +29,8 @@ import { ConfigListComponent } from './board/config/config-list/config-list.comp
 
 import { AgmCoreModule } from '@agm/core'; 
 import { AdminService } from './services/admin.service';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { AdminService } from './services/admin.service';
     UserDetailsComponent,
     ConfigDetailsComponent,    
     ConfigFormComponent,
-    ConfigListComponent
+    ConfigListComponent,
+    NewsletterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,33 +1,35 @@
-<div id="footerOne">
-    <div id="footerOne-one" >
-        <a routerLink="/"><img class="img-smi" src="../../assets/img/smi.png" alt="Logo Smi"></a>
-    </div>
-    <div id="footerOne-two">
-        <h3>Votre navigation</h3><br/>
-        <a routerLink="/">Accueil</a><br/>
-        <a routerLink="/about">À propos de nous</a><br/>
-        <a routerLink="/contact">Contact</a><br/>
-        <a>Newsletter</a><br/>
-        <a>Mentions légales</a><br/>
-    </div>
-    <div id="footerOne-three">
-        <h3>Nous contacter</h3><br/>
-        <div class="contacter"><img class="favicon" src="../../assets/img/adresse.png" alt="Logo Adresse"><span>ZA du chemin d'Aix, 505 Avenue de la Maximinoise, 83470 Saint-Maximin-la-Sainte-Baume</span></div>
-        <div class="contacter"><img class="favicon" src="../../assets/img/telephone.png" alt="Logo Telephone"><span> 04.98.05.92.70</span></div>
-        <div class="contacter"><img class="favicon" src="../../assets/img/mail.png" alt="Logo Mail"><span>contact@smi83.com</span></div>
-    </div>
-    <div id="footerOne-four">
-        <div class="fbNew">
-            <h3>Nous retrouver sur :</h3><br/>
-            <a href="https://www.facebook.com/smi.informatique"><img class="favicon" src="../../assets/img/facebook.png" alt="Logo Facebook"></a>
-            <h3>Newsletter</h3><br/>
-            <span>Indiquez votre adresse mail si vous souhaitez souscrire à notre newsletter</span><br/>
-            <input type="text" class="inputNew"><br/>
-            <button class="footerOrange">Souscrire</button>
+<div *ngIf="router == '/login'">
+    <div id="footerOne">
+        <div id="footerOne-one" >
+            <a routerLink="/"><img class="img-smi" src="../../assets/img/smi.png" alt="Logo Smi"></a>
         </div>
-    </div>
-    <div id="footerTwo">
-        <span>© Copyright - SMI Informatique - 2021 - Tous droits réservés</span>
+        <div id="footerOne-two">
+            <h3>Votre navigation</h3><br/>
+            <a routerLink="/">Accueil</a><br/>
+            <a routerLink="/about">À propos de nous</a><br/>
+            <a routerLink="/contact">Contact</a><br/>
+            <a>Newsletter</a><br/>
+            <a>Mentions légales</a><br/>
+        </div>
+        <div id="footerOne-three">
+            <h3>Nous contacter</h3><br/>
+            <div class="contacter"><img class="favicon" src="../../assets/img/adresse.png" alt="Logo Adresse"><span>ZA du chemin d'Aix, 505 Avenue de la Maximinoise, 83470 Saint-Maximin-la-Sainte-Baume</span></div>
+            <div class="contacter"><img class="favicon" src="../../assets/img/telephone.png" alt="Logo Telephone"><span> 04.98.05.92.70</span></div>
+            <div class="contacter"><img class="favicon" src="../../assets/img/mail.png" alt="Logo Mail"><span>contact@smi83.com</span></div>
+        </div>
+        <div id="footerOne-four">
+            <div class="fbNew">
+                <h3>Nous retrouver sur :</h3><br/>
+                <a href="https://www.facebook.com/smi.informatique"><img class="favicon" src="../../assets/img/facebook.png" alt="Logo Facebook"></a>
+                <h3>Newsletter</h3><br/>
+                <span>Indiquez votre adresse mail si vous souhaitez souscrire à notre newsletter</span><br/>
+                <input type="text" class="inputNew"><br/>
+                <button class="footerOrange">Souscrire</button>
+            </div>
+        </div>
+        <div id="footerTwo">
+            <span>© Copyright - SMI Informatique - 2021 - Tous droits réservés</span>
+        </div>
     </div>
 </div>
 
