@@ -28,6 +28,10 @@ import { ConfigFormComponent } from './board/config/config-form/config-form.comp
 import { ConfigListComponent } from './board/config/config-list/config-list.component';
 
 import { AgmCoreModule } from '@agm/core'; 
+import { AdminService } from './services/admin.service';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,10 @@ import { AgmCoreModule } from '@agm/core';
     UserDetailsComponent,
     ConfigDetailsComponent,    
     ConfigFormComponent,
-    ConfigListComponent
+    ConfigListComponent,
+    NewsletterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +69,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyAiGit6wi4ryhdr_x0n5OQZlYdHMov5pBg'
     })
   ],
-  providers: [AuthService],
+  providers: [AuthService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

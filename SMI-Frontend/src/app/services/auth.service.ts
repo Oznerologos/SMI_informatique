@@ -40,6 +40,16 @@ export class AuthService {
     return userMail;
   }
 
+  getUserId(){
+    const token = localStorage.getItem('token');
+    const splitToken = token.split('.');
+    const tokenSplited = splitToken[1];
+    const tokenDecodeB64 = atob(tokenSplited);
+    const parseToken = JSON.parse(tokenDecodeB64);
+    const userId = parseToken.sub; //Id
+    return userId;
+  }
+
   logoutUser(){
     localStorage.removeItem('token');
     this.userRole("none");

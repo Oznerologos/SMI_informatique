@@ -30,6 +30,11 @@ export class ConfigListComponent implements OnInit {
     this.adminService.deleteConfig(configId).subscribe(
       (res) => {
         this.adminService.getConfigs().subscribe((res) => {
+          if(res.validated == false) {
+            res.validated = "Non"
+          } else if (res.validated == true) {
+            res.validated = "Oui"
+        }
           this.listConfigs = res;
         });
       },

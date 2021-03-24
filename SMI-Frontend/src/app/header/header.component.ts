@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginregisterComponent } from '../loginregister/loginregister.component';
 import { AuthService } from '../services/auth.service';
 
@@ -9,9 +10,40 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit(): void {
   }
 
+  isRouteLogin() {
+    return this.router.url === '/login';
+  }
+
+  isRouteRegister() {
+    return this.router.url === '/register';
+  }
+
+  isRoutePassword() {
+    return this.router.url.startsWith('/responseResetPassword');
+  }
+
+  isRouteAdmin(){
+    return this.router.url === '/admin';
+  }
+
+  isRouteAdminUser(){
+    return this.router.url === '/userList';
+  }
+
+  isRouteAdminUserDetail(){
+    return this.router.url.startsWith('/userDetails');
+  }
+
+  isRouteAdminConfig(){
+    return this.router.url === '/configList';
+  }
+
+  isRouteAdminConfigDetail(){
+    return this.router.url.startsWith('/configDetails');
+  }
 }
