@@ -1,4 +1,4 @@
-<button class="btn btn-primary" type="button" (click)="onAdd()">
+<button class="btn BleuBlanc" type="button" (click)="onAdd()">
     Ajouter une Configuration
 </button>
 <table class="table table-bordered">
@@ -10,6 +10,7 @@
             <th scope="col">Monté</th>
             <th scope="col">Message</th>
             <th scope="col">Validé</th>
+            <th scope="col">Utilisateur</th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
@@ -35,13 +36,16 @@
                 Non
             </td>
             <td>
-                <button class="btn btn-info" type="submit" (click)="onUpdate(config.id)">
+                {{config.user.firstname}} {{config.user.lastname}}
+            </td>
+            <td>
+                <button class="btn BleuBlanc" type="submit" (click)="onUpdate(config.id)">
                     Modifier</button>
-                <button class="btn btn-danger" type="button" (click)="onDelete(config.id)">
+                <button class="btn Orange" type="button" (click)="onDelete(config.id)">
                     Supprimer
                 </button>
             </td>
         </tr>
     </tbody>
 </table>
-<button class="button" (click)="retour()">Retour</button>
+<button class="Orange" style="margin-left: 0;" (click)="retour()">Retour</button>

@@ -1,6 +1,6 @@
-<div *ngIf="!isRouteLogin() && !isRouteRegister()">
+<div *ngIf="!isRouteLogin() && !isRouteRegister() && !isRoutePassword()">
     <div id="headerOne">
-        <div id="headerOne-one" >
+        <div id="headerOne-one">
             <!-- <a routerLink="/" class="logo">SMI Informatique</a> -->
             <a routerLink="/"><img class="img-smi" src="../../assets/img/smi.png" alt="Logo Smi"></a>
         </div>
@@ -12,19 +12,21 @@
         </div>
         <div id="headerOne-three">
             <a *ngIf="!authService.loggedIn()" routerLink="/login" class="BleuBlanc">Se connecter</a>
-            <a *ngIf="authService.isAdmin" routerLink="/userList" class="BleuBlanc">Administration</a>
+            <a *ngIf="authService.isAdmin" routerLink="/admin" class="BleuBlanc">Administration</a>
         </div>
         <div id="headerOne-four">
             <a *ngIf="!authService.loggedIn()" routerLink="/register" class="Orange">S'inscrire</a>
             <a *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" class="Orange">Se déconnecter</a>
         </div>
         <div id="headerOne-five">
-            <a *ngIf="authService.loggedIn()" routerLink="/profil"><img class="img-profil" src="../../assets/img/profilTest.jpg" alt="Image de profil">
-            <p>Prénom Nom</p></a>
+            <a *ngIf="authService.loggedIn()" routerLink="/profil"><img class="img-profil"
+                    src="../../assets/img/profilTest.jpg" alt="Image de profil">
+                <p>{{dataUser.firstname}} {{dataUser.lastname}}</p>
+            </a>
         </div>
     </div>
     <div id="headerTwo">
-        <div id="headerTwo-one" *ngIf="authService.loggedIn()">
+        <div id="headerTwo-one" *ngIf="authService.loggedIn() && !isRouteAdminUser() && !isRouteAdminUserDetail() && !isRouteAdminConfig() && !isRouteAdminConfigDetail()">
             <a routerLink="/EZConfig" class="BleuBlanc">Configuration simple</a>
             <a routerLink="/Config" class="Orange">Configuration avancée</a>
         </div>
