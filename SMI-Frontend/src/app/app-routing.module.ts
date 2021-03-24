@@ -17,6 +17,7 @@ import { ConfigFormComponent } from './board/config/config-form/config-form.comp
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
@@ -69,6 +70,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'admin',
+    component: AdminComponent,
+  },
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -78,4 +83,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -7,27 +7,27 @@ import { Repository } from 'typeorm';
 export class ConfigsService {
     constructor(
         @InjectRepository(Config)
-        private configsRepository: Repository<Config>,
+        private configsRepository: Repository<Config>
       ) {}
 
       create(config: Config) {
         this.configsRepository.insert(config);
       }
     
-      findAll(): Promise<Config[]> {
-        return this.configsRepository.find();
+      async findAll(): Promise<Config[]> {
+        return this.configsRepository.find({ relations: ["user"] });
       }
 
       findAllWhereUser(id: number): Promise<Config[]> {
-        return this.configsRepository.find({ where: {user: {id}}});
+        return this.configsRepository.find({ where: {user: {id}}, relations: ["user"]});
       }
 
       findAllWhereUserAdmin(id: number): Promise<Config[]> {
-        return this.configsRepository.find({ where: {user: {id}, validated: 1}});
+        return this.configsRepository.find({ where: {user: {id}, validated: 1}, relations: ["user"]});
       }
     
       findOne(id: number): Promise<Config> {
-        return this.configsRepository.findOne(id);
+        return this.configsRepository.findOne(id, { relations: ["user"] });
       }
       
       update(id: number, config: Config) {

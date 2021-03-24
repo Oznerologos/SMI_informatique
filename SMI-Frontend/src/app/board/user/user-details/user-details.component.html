@@ -6,7 +6,7 @@
         <p class="card-text">Phone : {{ dataUser.phone }}</p>
         <p class="card-text">Role : {{ dataUser.role }}</p>
     </div>
-    <button class="button" (click)="retour()">Retour</button>
+    <button class="Orange" style="margin-left: 0;" (click)="retour()">Retour</button>
 </div>
 <div>
     <table class="table table-bordered">
@@ -43,14 +43,14 @@
                     Non
                 </td>
                 <td>
-                    <button class="btn btn-info" type="submit" (click)="onUpdate(config.id)">
+                    <button class="btn BleuBlanc" type="submit" (click)="onUpdate(config.id)">
                         Modifier</button>
-                    <button class="btn btn-danger" type="button" (click)="onDelete(config.id)">
+                    <button class="btn Orange" type="button" (click)="onDelete(config.id)">
                         Supprimer
                     </button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <button class="button" (click)="retour()">Retour</button>
+    <button class="Orange" style="margin-left: 0;" (click)="retour()">Retour</button>
 </div>

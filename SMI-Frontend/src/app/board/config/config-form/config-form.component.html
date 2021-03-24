@@ -1,290 +1,297 @@
 <div *ngIf="formGroup">
-    <form [formGroup]="formGroup" (submit)="onSubmit()" style="width: 40%; margin: 2rem;">
+    <form [formGroup]="formGroup" (submit)="onSubmit()" class="center row">
 
-        <div class="form-group">
-            <label for="name">Nom</label><br>
-            <input type="text" name="name" id="name" formControlName="name">
-            <!-- <div *ngIf="submitted && firstname.errors" class="invalid">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="name">Nom</label><br>
+                <input type="text" name="name" id="name" formControlName="name">
+                <!-- <div *ngIf="submitted && firstname.errors" class="invalid">
             <div *ngIf="firstname.errors.required">
                 Le prénom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="budget">Budget</label><br>
-            <input type="number" name="budget" id="budget" formControlName="budget">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="budget">Budget</label><br>
+                <input type="number" name="budget" id="budget" formControlName="budget">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="mounted">Monté</label><br>
-            <input type="text" name="mounted" id="mounted" formControlName="mounted">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="mounted">Monté</label><br>
+                <input type="text" name="mounted" id="mounted" formControlName="mounted">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="cpu">Cpu</label><br>
-            <input type="text" name="cpu" id="cpu" formControlName="cpu">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="cpu">Cpu</label><br>
+                <input type="text" name="cpu" id="cpu" formControlName="cpu">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="motherboard">Carte Mère</label><br>
-            <input type="text" name="motherboard" id="motherboard" formControlName="motherboard">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="motherboard">Carte Mère</label><br>
+                <input type="text" name="motherboard" id="motherboard" formControlName="motherboard">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="ram">Ram</label><br>
-            <input type="text" name="ram" id="ram" formControlName="ram">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="ram">Ram</label><br>
+                <input type="text" name="ram" id="ram" formControlName="ram">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="coolingsystem">Système de refroidissement</label><br>
-            <input type="text" name="coolingsystem" id="coolingsystem" formControlName="coolingsystem">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="coolingsystem">Système de refroidissement</label><br>
+                <input type="text" name="coolingsystem" id="coolingsystem" formControlName="coolingsystem">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="gpu">Carte Graphique</label><br>
-            <input type="text" name="gpu" id="gpu" formControlName="gpu">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="gpu">Carte Graphique</label><br>
+                <input type="text" name="gpu" id="gpu" formControlName="gpu">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="ssd1">SSD1</label><br>
-            <input type="text" name="ssd1" id="ssd1" formControlName="ssd1">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="ssd1">SSD1</label><br>
+                <input type="text" name="ssd1" id="ssd1" formControlName="ssd1">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="ssd2">SSD2</label><br>
-            <input type="text" name="ssd2" id="ssd2" formControlName="ssd2">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="ssd2">SSD2</label><br>
+                <input type="text" name="ssd2" id="ssd2" formControlName="ssd2">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="hdd1">HHD1</label><br>
-            <input type="text" name="hdd1" id="hdd1" formControlName="hdd1">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="hdd1">HHD1</label><br>
+                <input type="text" name="hdd1" id="hdd1" formControlName="hdd1">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="hdd2">HDD2</label><br>
-            <input type="text" name="hdd2" id="hdd2" formControlName="hdd2">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="hdd2">HDD2</label><br>
+                <input type="text" name="hdd2" id="hdd2" formControlName="hdd2">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="cdplayerburner">Lecteur CD</label><br>
-            <input type="text" name="cdplayerburner" id="cdplayerburner" formControlName="cdplayerburner">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="cdplayerburner">Lecteur CD</label><br>
+                <input type="text" name="cdplayerburner" id="cdplayerburner" formControlName="cdplayerburner">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="cardsplayer">Lecteur de Carte</label><br>
-            <input type="text" name="cardsplayer" id="cardsplayer" formControlName="cardsplayer">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="cardsplayer">Lecteur de Carte</label><br>
+                <input type="text" name="cardsplayer" id="cardsplayer" formControlName="cardsplayer">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="wifiboard">Carte Wifi</label><br>
-            <input type="text" name="wifiboard" id="wifiboard" formControlName="wifiboard">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="wifiboard">Carte Wifi</label><br>
+                <input type="text" name="wifiboard" id="wifiboard" formControlName="wifiboard">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="case">Boitier</label><br>
-            <input type="text" name="case" id="case" formControlName="case">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="case">Boitier</label><br>
+                <input type="text" name="case" id="case" formControlName="case">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="display1">Premier écran</label><br>
-            <input type="text" name="display1" id="display1" formControlName="display1">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="display1">Premier écran</label><br>
+                <input type="text" name="display1" id="display1" formControlName="display1">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="display2">Second écran</label><br>
-            <input type="text" name="display2" id="display2" formControlName="display2">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="display2">Second écran</label><br>
+                <input type="text" name="display2" id="display2" formControlName="display2">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="powerunit">Unité centrale</label><br>
-            <input type="text" name="powerunit" id="powerunit" formControlName="powerunit">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="powerunit">Unité centrale</label><br>
+                <input type="text" name="powerunit" id="powerunit" formControlName="powerunit">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="keyboard">Clavier</label><br>
-            <input type="text" name="keyboard" id="keyboard" formControlName="keyboard">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="keyboard">Clavier</label><br>
+                <input type="text" name="keyboard" id="keyboard" formControlName="keyboard">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="mouse">Souris</label><br>
-            <input type="text" name="mouse" id="mouse" formControlName="mouse">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="mouse">Souris</label><br>
+                <input type="text" name="mouse" id="mouse" formControlName="mouse">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="os">OS</label><br>
-            <input type="text" name="os" id="os" formControlName="os">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="os">OS</label><br>
+                <input type="text" name="os" id="os" formControlName="os">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="antivirus">Antivirus</label><br>
-            <input type="text" name="antivirus" id="antivirus" formControlName="antivirus">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="antivirus">Antivirus</label><br>
+                <input type="text" name="antivirus" id="antivirus" formControlName="antivirus">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="microsoftoffice">Microsoft Office</label><br>
-            <input type="text" name="microsoftoffice" id="microsoftoffice" formControlName="microsoftoffice">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="microsoftoffice">Microsoft Office</label><br>
+                <input type="text" name="microsoftoffice" id="microsoftoffice" formControlName="microsoftoffice">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="soundboard">Carte Son</label><br>
-            <input type="text" name="soundboard" id="soundboard" formControlName="soundboard">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="soundboard">Carte Son</label><br>
+                <input type="text" name="soundboard" id="soundboard" formControlName="soundboard">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="inverter">Onduleur</label><br>
-            <input type="text" name="inverter" id="inverter" formControlName="inverter">
-            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div class="form-group">
+                <label for="inverter">Onduleur</label><br>
+                <input type="text" name="inverter" id="inverter" formControlName="inverter">
+                <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
             <div *ngIf="lastname.errors.required">
                 Le nom est requis
             </div>
         </div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="validated">Validé</label><br>
+                <select name="validated" id="validated" formControlName="validated">
+                    <option value="true">Oui</option>
+                    <option value="false">Non</option>
+                </select>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="validated">Validé</label><br>
-            <select name="validated" id="validated" formControlName="validated">
-                <option value="true">Oui</option>
-                <option value="false">Non</option>
-            </select>
-        </div>
-
-        <div class="form-group">
+        <div class="form-group col-sm-12">
             <label for="message">Message</label><br>
             <textarea name="message" id="message" formControlName="message"></textarea>
             <!-- <div *ngIf="submitted && mail.errors" class="invalid">
-            <div *ngIf="mail.errors.required">
-                Le mail est requis
-            </div>
-            <div *ngIf="mail.errors.email">
-                Le format du mail est invalide
-            </div>
-        </div> -->
+        <div *ngIf="mail.errors.required">
+            Le mail est requis
         </div>
-
-        <button *ngIf="idConfig == null" type="submit" class="btn btn-primary">Créer</button>
-        <button *ngIf="idConfig != null" type="submit" class="btn btn-primary">Mettre à jour</button>
+        <div *ngIf="mail.errors.email">
+            Le format du mail est invalide
+        </div>
+    </div> -->
+        </div>
+        <div class="col-sm-12">
+            <button *ngIf="idConfig == null" type="submit" class="btn BleuBlanc">Créer</button>
+            <button *ngIf="idConfig != null" type="submit" class="btn BleuBlanc">Mettre à jour</button>
+        </div>
     </form>
 </div>
-<button class="button" (click)="retour()">Retour</button>
+<button class="Orange" style="margin-left: 0" (click)="retour()">Retour</button>
 <!-- <p class="error" *ngIf="error != ''"> {{error}}</p> -->
