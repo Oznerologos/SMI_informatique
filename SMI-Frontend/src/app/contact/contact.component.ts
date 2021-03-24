@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
     number: ['', Validators.required],
-    society: ['', Validators.required],
+    society: [''],
     mail: ['', [Validators.required, Validators.email]],
     message: ['', Validators.required],
   });
