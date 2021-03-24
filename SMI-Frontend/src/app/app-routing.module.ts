@@ -17,54 +17,54 @@ import { ConfigFormComponent } from './board/config/config-form/config-form.comp
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
-  {path: 'Config', component: ConfigComponent},
-  {path: 'EZConfig', component: EzconfigComponent},
+  {path: 'Config', canActivate: [AuthGuardService], component: ConfigComponent},
+  {path: 'EZConfig', canActivate: [AuthGuardService], component: EzconfigComponent},
   {path: '', component: MainComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'registerLogin', component: LoginregisterComponent},
-  {path: 'profil', component: ProfilComponent},
+  {path: 'profil', canActivate: [AuthGuardService], component: ProfilComponent},
   {path: 'responseResetPassword', component: ResponseResetPasswordComponent},
   {
-    path: 'userList',
+    path: 'userList', canActivate: [AuthGuardService],
     component: UserListComponent,
   },
   {
     path: 'userForm',
     children: [
       {
-        path: '',
+        path: '', canActivate: [AuthGuardService],
         component: UserFormComponent,
       },
       {
-        path: ':id',
+        path: ':id', canActivate: [AuthGuardService],
         component: UserFormComponent,
       },
     ],
   },
   {
-    path: 'userDetails/:id',
+    path: 'userDetails/:id', canActivate: [AuthGuardService],
     component: UserDetailsComponent,
   },
   {
-    path: 'configList',
+    path: 'configList', canActivate: [AuthGuardService],
     component: ConfigListComponent,
   },
   {
-    path: 'configDetails/:id',
+    path: 'configDetails/:id', canActivate: [AuthGuardService],
     component: ConfigDetailsComponent,
   },
   {
     path: 'configForm',
     children: [
       {
-        path: '',
+        path: '', canActivate: [AuthGuardService],
         component: ConfigFormComponent,
       },
       {
-        path: ':id',
+        path: ':id', canActivate: [AuthGuardService],
         component: ConfigFormComponent,
       },
     ],

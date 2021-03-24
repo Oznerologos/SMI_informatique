@@ -58,11 +58,11 @@ export class ResponseResetPasswordComponent implements OnInit {
       this.authService.recover(this.resettoken, this.formGroup.get('password').value).subscribe(
         (res) => {
           alert(`Mot de passe modifié avec succès`);
-          this.router.navigateByUrl('/registerLogin');
+          this.router.navigateByUrl('');
         },
         (err) => {
           alert('Erreur : Mot de passe déjà modifié');
-          this.router.navigateByUrl('/registerLogin');
+          this.router.navigateByUrl('');
         }
       );
     } else {
