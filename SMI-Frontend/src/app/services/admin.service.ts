@@ -25,6 +25,10 @@ export class AdminService {
     return this.http.post(`${this.authService.URL_USER}`, user);
   }
 
+  public createUserAdmin(user: IUser): Observable<any> {
+    return this.http.post(`${this.authService.URL_USER}/admin`, user);
+  }
+
   public updateUser(user: IUser): Observable<any> {
     return this.http.put(`${this.authService.URL_USER}/` + user.id, user);
   }
