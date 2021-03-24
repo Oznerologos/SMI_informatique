@@ -1,4 +1,4 @@
-<div *ngIf="!isRouteLogin() && !isRouteRegister()">
+<div *ngIf="!isRouteLogin() && !isRouteRegister() && !isRoutePassword()">
     <div id="headerOne">
         <div id="headerOne-one">
             <!-- <a routerLink="/" class="logo">SMI Informatique</a> -->
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div id="headerTwo">
-        <div id="headerTwo-one" *ngIf="authService.loggedIn()">
+        <div id="headerTwo-one" *ngIf="authService.loggedIn() && !isRouteAdminUser() && !isRouteAdminUserDetail() && !isRouteAdminConfig() && !isRouteAdminConfigDetail()">
             <a routerLink="/EZConfig" class="BleuBlanc">Configuration simple</a>
             <a routerLink="/Config" class="Orange">Configuration avancée</a>
         </div>
