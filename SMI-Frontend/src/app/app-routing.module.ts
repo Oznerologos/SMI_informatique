@@ -14,6 +14,9 @@ import { UserListComponent } from './board/user/user-list/user-list.component';
 import { ConfigDetailsComponent } from './board/config/config-details/config-details.component';
 import { ConfigListComponent } from './board/config/config-list/config-list.component';
 import { ConfigFormComponent } from './board/config/config-form/config-form.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path: 'Config', component: ConfigComponent},
@@ -66,6 +69,9 @@ const routes: Routes = [
       },
     ],
   },
+  {path: 'newsletter', component: NewsletterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
 ];
 
 @NgModule({

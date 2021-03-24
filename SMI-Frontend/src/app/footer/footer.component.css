@@ -39,10 +39,8 @@
     grid-row-start: 2;
     text-align: center;
     margin-top: auto;
-    margin-bottom: auto;
     color: white;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .img-smi{

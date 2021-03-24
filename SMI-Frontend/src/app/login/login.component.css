@@ -1,0 +1,81 @@
+#page {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: 100vh;
+}
+
+#one{
+    grid-column-start: 1;
+    background-image: url("../../assets/img/login.jpg");
+    background-size: cover;
+}
+
+#two{
+    grid-column-start: 2;
+    height: 100%;
+    text-align: center;
+}
+
+.img-login{
+    width: 40em;
+    margin-bottom: 8em;
+}
+
+.title-login{
+    color: #575b98;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.form-login{
+    width: 100%;
+}
+
+.form-login input{
+    width: 70%;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 12px;
+    border: transparent;
+    background-color: lightgray;
+    margin-bottom: 1em;
+}
+
+.form-login label{
+    width: 48%;
+    float: left;
+    color: gray;
+}
+
+.resetPassword{
+    width: 48%;
+    float: right;
+    text-decoration: underline;
+}
+
+.button{
+    margin-top: 6em;
+    background-color: #575b98;
+    border: 1px solid #575b98;
+    color: white;
+    padding: 0.5em 3.5em;
+    border-radius: 50px;
+    text-align: center;
+    display: block;
+    margin: 3em auto;
+}
+
+i{
+    color: black;
+    cursor: pointer;
+}
+
+.form-login p{
+    width: 100%;
+    color: red;
+}
+
+.invalid{
+    color: red;
+}
