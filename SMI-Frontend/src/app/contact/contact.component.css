@@ -41,7 +41,8 @@
 }
 
 .form-contact input,textarea {
-    background-color: rgb(245, 245, 245);
+    background-color: lightgray;
+    padding-left: 10px;
     border-radius: 10px;
     border: 0;
     width: 100%;
@@ -127,7 +128,7 @@
 }
 .invalid{
     color: red;
+    margin: 0;
+    padding: 0;
     position: absolute;
 }
-
-

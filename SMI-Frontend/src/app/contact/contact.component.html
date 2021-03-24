@@ -34,9 +34,9 @@
 
                     <div class="form-contact">
                         <label for="mail">Téléphone* :</label>
-                        <input type="text" id="phone" name="phone" formControlName="phone">
-                        <div *ngIf="formContact.controls['phone'].invalid && (formContact.controls['phone'].touched)" class="invalid">
-                            <div *ngIf="formContact.controls['phone'].errors.required">
+                        <input type="text" id="number" name="number" formControlName="number">
+                        <div *ngIf="formContact.controls['number'].invalid && (formContact.controls['number'].touched)" class="invalid">
+                            <div *ngIf="formContact.controls['number'].errors.required">
                                 Le numéro est requis
                             </div>
                         </div>
@@ -71,4 +71,3 @@
         <p><b style="font-size: 28px;">Plus d'informations</b><br>Vous souhaitez mieux nous connaitre ? Alors retrouvez-nous sur les réseaux sociaux</p>
     </div>
  </div>  
-

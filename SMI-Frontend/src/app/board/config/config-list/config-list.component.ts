@@ -44,6 +44,6 @@ export class ConfigListComponent implements OnInit {
   }
 
   retour(){
-    this.router.navigateByUrl('/configList');
+    this.router.navigateByUrl('/admin');
   }
 }
