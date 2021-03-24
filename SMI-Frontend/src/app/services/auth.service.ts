@@ -50,6 +50,10 @@ export class AuthService {
     return userId;
   }
 
+  sendMail(body: any){
+    return this.http.post<any>("http://localhost:3000/contact/sendMail", body);
+  }
+
   logoutUser(){
     localStorage.removeItem('token');
     this.userRole("none");
