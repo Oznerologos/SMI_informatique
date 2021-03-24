@@ -2,56 +2,60 @@
     <div class="row align-items-center">
         <div class="form col-12">
             <div class="form col-6 mx-auto">
-            <h2 class="title-contact">Contactez-nous!</h2>
+                <h2 class="title-contact">Contactez-nous!</h2>
 
-            <form class="form-contact form-group" [formGroup]="formContact" (ngSubmit)="submitContact()">
+                <form class="form-contact form-group" [formGroup]="formContact" (ngSubmit)="submitContact()">
 
-                <div class="form-contact">
-                    <label for="firstname">Prénom*</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && firstname.errors }"><br>
-                    <div *ngIf="submitted && firstname.errors" class="invalid">
-                        <div *ngIf="firstname.errors.required">
-                            Le prénom est requis
+                    <div class="form-contact">
+                        <label for="firstname">Prénom*</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname"
+                            formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && firstname.errors }"><br>
+                        <div *ngIf="submitted && firstname.errors" class="invalid">
+                            <div *ngIf="firstname.errors.required">
+                                Le prénom est requis
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-contact">
-                    <label for="lastname">Nom*</label>
-                    <input type="text" class="form-control" id="lastname"  name="lastname" formControlName="lastname" [ngClass]="{ 'is-invalid': submitted && lastname.errors }"><br>
-                    <div *ngIf="submitted && lastname.errors" class="invalid">
-                        <div *ngIf="lastname.errors.required">
-                            Le nom est requis
+                    <div class="form-contact">
+                        <label for="lastname">Nom*</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" formControlName="lastname"
+                            [ngClass]="{ 'is-invalid': submitted && lastname.errors }"><br>
+                        <div *ngIf="submitted && lastname.errors" class="invalid">
+                            <div *ngIf="lastname.errors.required">
+                                Le nom est requis
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-contact">
-                    <label for="mail">E-mail*</label>
-                    <input type="email" class="form-control" id="mail" name="mail" formControlName="mail" [ngClass]="{ 'is-invalid': submitted && mail.errors }"><br>
-                    <div *ngIf="submitted && mail.errors" class="invalid">
-                        <div *ngIf="mail.errors.required">
-                            L'adresse email est requise
+                    <div class="form-contact">
+                        <label for="mail">E-mail*</label>
+                        <input type="email" class="form-control" id="mail" name="mail" formControlName="mail"
+                            [ngClass]="{ 'is-invalid': submitted && mail.errors }"><br>
+                        <div *ngIf="submitted && mail.errors" class="invalid">
+                            <div *ngIf="mail.errors.required">
+                                L'adresse email est requise
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-contact">
-                    <label for="message">Message*</label>
-                    <textarea class="form-control" id="message" name="message" formControlName="message" [ngClass]="{ 'is-invalid': submitted && message.errors }">Ajouter votre message ici....</textarea><br>
-                    <div *ngIf="submitted && firstname.errors" class="invalid">
-                        <div *ngIf="firstname.errors.required">
-                            Un message est requis
+                    <div class="form-contact">
+                        <label for="message">Message*</label>
+                        <textarea class="form-control" id="message" name="message" formControlName="message"
+                            [ngClass]="{ 'is-invalid': submitted && message.errors }">Ajouter votre message ici....</textarea><br>
+                        <div *ngIf="submitted && firstname.errors" class="invalid">
+                            <div *ngIf="firstname.errors.required">
+                                Un message est requis
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                
-                <i>* : Informations obligatoires</i><br>
 
-                <button type="submit" class="btn btn-primary center-block">Envoyer</button>
-            </form>
-            <p class="error" *ngIf="error != ''"> {{error}}</p>
+                    <i>* : Informations obligatoires</i><br>
+
+                    <button type="submit" class="btn BleuBlanc center-block">Envoyer</button>
+                </form>
+                <p class="error" *ngIf="error != ''"> {{error}}</p>
             </div>
         </div>
         <!-- <div class="row informations">

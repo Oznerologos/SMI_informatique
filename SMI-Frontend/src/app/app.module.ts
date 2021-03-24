@@ -32,6 +32,7 @@ import { AdminService } from './services/admin.service';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { RegisterComponent } from './register/register.component';
     ConfigListComponent,
     NewsletterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

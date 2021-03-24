@@ -1,1 +1,50 @@
-<p>profil works!</p>
+<div *ngIf="formGroup">
+    <form [formGroup]="formGroup" (submit)="onSubmit()" class="center">
+
+        <div class="form-group">
+            <label for="firstname">Prénom</label><br>
+            <input type="text" name="firstname" id="firstnameRegister" formControlName="firstname">
+            <!-- <div *ngIf="submitted && firstname.errors" class="invalid">
+            <div *ngIf="firstname.errors.required">
+                Le prénom est requis
+            </div>
+        </div> -->
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Nom</label><br>
+            <input type="text" name="lastname" id="lastnameRegister" formControlName="lastname">
+            <!-- <div *ngIf="submitted && lastname.errors" class="invalid">
+            <div *ngIf="lastname.errors.required">
+                Le nom est requis
+            </div>
+        </div> -->
+        </div>
+
+        <div class="form-group">
+            <label for="mail">E-mail</label><br>
+            <input type="email" name="mail" id="mailRegister" formControlName="mail">
+            <!-- <div *ngIf="submitted && mail.errors" class="invalid">
+            <div *ngIf="mail.errors.required">
+                Le mail est requis
+            </div>
+            <div *ngIf="mail.errors.email">
+                Le format du mail est invalide
+            </div>
+        </div> -->
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Numéro de téléphone</label><br>
+            <input type="tel" name="phone" id="phoneRegister" formControlName="phone">
+            <!-- <div *ngIf="submitted && phone.errors" class="invalid"> -->
+            <!-- <div *ngIf="phone.errors.required">
+                Le numéro de téléphone est requis
+            </div> 
+            </div> -->
+        </div>
+
+        <button type="submit" class="btn BleuBlanc">Mettre à jour</button>
+    </form>
+</div>
+<!-- <p class="error" *ngIf="error != ''"> {{error}}</p> -->
