@@ -22,6 +22,19 @@ export class UsersController {
     }
   }
 
+  @Post('/admin')
+  async createAdmin(@Body() user: User) {
+    var existingUser = await this.usersService.findOneByMail(user.mail);
+    if (existingUser != undefined) {
+      return 'Cet email existe déjà';
+    } else {
+      user = await this.usersService.create(user);
+      return {
+        user: user
+      }
+    }
+  }
+
   @Get()
   findAll(): Promise<User[]> {
     return this.usersService.findAll();
@@ -32,7 +45,7 @@ export class UsersController {
     return this.usersService.findOneById(params.id);
   }
 
-  @Get('getOneMail/:mail')
+  @Get('/getOneMail/:mail')
   getOneUser(@Param() params): Promise<User> {
     return this.usersService.findOneByMail(params.mail);
   }
