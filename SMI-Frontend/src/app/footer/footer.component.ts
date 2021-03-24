@@ -20,4 +20,8 @@ export class FooterComponent implements OnInit {
   isRouteRegister() {
     return this.router.url === '/register';
   }
+
+  isRoutePassword() {
+    return this.router.url.startsWith('/responseResetPassword');
+  }
 }
