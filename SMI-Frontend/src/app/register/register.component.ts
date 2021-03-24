@@ -42,12 +42,14 @@ export class RegisterComponent implements OnInit {
     
     if(psw == pswRepeat && psw !=''){
       //Envoie du formulaire
+      this.auth.prenom = this.formRegister.controls['firstname'].value;
+      this.auth.nom = this.formRegister.controls['lastname'].value;
       this.auth.register(this.formRegister.value).subscribe(
         data =>{
           if(data.access_token != null || data.access_token != undefined){
             localStorage.setItem('token', data.access_token);
             this.auth.userRole("none");
-            this.router.navigate(['/']);
+            this.router.navigateByUrl('/');
           }
         },
         err => {

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginregisterComponent } from '../loginregister/loginregister.component';
-import { AdminService } from '../services/admin.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -9,29 +7,14 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  idUser = null;
-  dataUser = null;
-  existUser: boolean;
 
-  constructor(
-    public authService: AuthService,
-    private adminService: AdminService,
-    public router: Router
-    ) {     
-    if (localStorage.getItem('token')) {
-    this.idUser = this.authService.getUserId();
-    }
+export class HeaderComponent implements OnInit {
+
+  constructor(public authService: AuthService, public router: Router) {     
   }
 
   ngOnInit(): void {
-    this.existUser = false;
-    if (this.idUser) {
-      this.adminService.getUser(this.idUser).subscribe((res) => {
-        this.dataUser = res;
-        this.existUser = true;
-      });
-    };
+    
   }
 
   isRouteLogin() {
