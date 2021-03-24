@@ -17,6 +17,7 @@ import { ConfigFormComponent } from './board/config/config-form/config-form.comp
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
@@ -68,6 +69,10 @@ const routes: Routes = [
         component: ConfigFormComponent,
       },
     ],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
   },
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'login', component: LoginComponent},

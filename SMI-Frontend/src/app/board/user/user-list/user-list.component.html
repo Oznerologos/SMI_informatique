@@ -1,4 +1,4 @@
-<button class="btn btn-primary" type="button" (click)="onAdd()">
+<button class="btn BleuBlanc" type="button" (click)="onAdd()">
     Ajouter un User
 </button>
 <table class="table table-bordered">
@@ -32,12 +32,10 @@
                 {{ user.role }}
             </td>
             <td>
-                <button class="btn btn-info" type="submit" (click)="onUpdate(user.id)">
-                    Modifier</button><button class="btn btn-danger" type="button" (click)="onDelete(user.id)">
-                    Supprimer
-                </button>
+                <button class="btn BleuBlanc" type="submit" (click)="onUpdate(user.id)">Modifier</button>
+                <button class="btn Orange" type="button" (click)="onDelete(user.id)">Supprimer</button>
             </td>
         </tr>
     </tbody>
 </table>
-<button class="button" (click)="retour()">Retour</button>
+<button class="Orange" style="margin-left: 0;" (click)="retour()">Retour</button>
