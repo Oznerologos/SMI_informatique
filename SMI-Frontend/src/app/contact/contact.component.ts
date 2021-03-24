@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
+import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -62,6 +62,8 @@ export class ContactComponent implements OnInit {
       }
     )
   }
+
+
 
   //Get des différents inputs. 
   //Pour savoir s'ils sont vide ou non conforme au format

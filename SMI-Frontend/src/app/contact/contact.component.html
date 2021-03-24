@@ -54,7 +54,7 @@
 
             <div class="form-contact">
                 <label for="message">Écrivez votre message* :</label>
-                <textarea id="message" name="message" formControlName="message" [ngClass]="{ 'is-invalid': submitted && message.errors }" rows="5">Ajouter votre message ici....</textarea><br>
+                <textarea id="message" name="message" formControlName="message" [ngClass]="{ 'is-invalid': submitted && message.errors }" rows="5">Ajoutez votre message ici....</textarea><br>
                 <div *ngIf="submitted && message.errors" class="invalid">
                     <div *ngIf="message.errors.required">
                         Un message est requis
