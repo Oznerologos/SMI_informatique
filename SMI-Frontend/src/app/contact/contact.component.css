@@ -41,11 +41,10 @@
 }
 
 .form-contact input,textarea {
-    background-color: lightgray;
-    padding-left: 10px;
     border-radius: 10px;
     border: 0;
     width: 100%;
+    background-color: lightgrey;
 }
 .form-contact input {
     height: 40px;
@@ -70,6 +69,12 @@
     -moz-box-shadow: 7px 7px 7px 1px  rgba(99, 99, 99, 0.32);
 }
 
+.invalid{
+    color: red;
+    position: absolute;
+}
+
+
 
 .footer-contact {
     color: white;
@@ -89,20 +94,10 @@
 @media screen and (min-width: 1500px)
 {
     .contact-container {
-        padding: 70px 700px;
+        padding: 70px 650px;
         margin: 0 auto 0 auto;
     }
 }
-
-@media screen and (max-width: 740px)
-{
-    .contact-container {
-        padding: 70px 0px;
-        margin: 0 auto 0 auto;
-    }
-}
-
-
 
 @media screen and (max-width: 1240px)
 {
@@ -112,23 +107,14 @@
     }
 }
 
+
 @media screen and (max-width: 740px)
 {
     .contact-container {
         padding: 70px 0px;
         margin: 0 auto 0 auto;
     }
-}
-
-
-/* A REVOIr */
-
-.error{
-    color: red;
-}
-.invalid{
-    color: red;
-    margin: 0;
-    padding: 0;
-    position: absolute;
+    .inline-input{
+        grid-gap: 5px;
+    }
 }
