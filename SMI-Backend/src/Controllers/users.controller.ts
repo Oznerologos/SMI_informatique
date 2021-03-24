@@ -10,14 +10,27 @@ export class UsersController {
   @Post('')
   async create(@Body() user: User) {
     var existingUser = await this.usersService.findOneByMail(user.mail);
-    const payload = { mail: user.mail, sub: user.id };
     if (existingUser != undefined) {
       return 'Cet email existe déjà';
     } else {
-      this.usersService.create(user);
+      user = await this.usersService.create(user);
+      const payload = { mail: user.mail, sub: user.id };
       return {
         user: user.mail,
         access_token: this.jwtService.sign(payload),
+      }
+    }
+  }
+
+  @Post('/admin')
+  async createAdmin(@Body() user: User) {
+    var existingUser = await this.usersService.findOneByMail(user.mail);
+    if (existingUser != undefined) {
+      return 'Cet email existe déjà';
+    } else {
+      user = await this.usersService.create(user);
+      return {
+        user: user
       }
     }
   }
@@ -32,7 +45,7 @@ export class UsersController {
     return this.usersService.findOneById(params.id);
   }
 
-  @Get('getOneMail/:mail')
+  @Get('/getOneMail/:mail')
   getOneUser(@Param() params): Promise<User> {
     return this.usersService.findOneByMail(params.mail);
   }

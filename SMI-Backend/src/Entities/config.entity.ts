@@ -16,7 +16,7 @@ export class Config {
     budget: number;
 
     @Column()
-    mounted: boolean;
+    mounted: string;
 
     @Column()
     cpu: string;
@@ -25,7 +25,7 @@ export class Config {
     motherboard: string;
 
     @Column()
-    ram: number;
+    ram: string;
 
     @Column()
     coolingsystem: string;
@@ -49,7 +49,7 @@ export class Config {
     cdplayerburner: string;
 
     @Column()
-    cardsplayers: string;
+    cardsplayer: string;
 
     @Column()
     wifiboard: string;

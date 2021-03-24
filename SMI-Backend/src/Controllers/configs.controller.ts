@@ -9,6 +9,7 @@ export class ConfigsController {
     @Post()
     create(@Body() config: Config) {
       this.configsService.create(config);
+      return config;
     }
   
     @Get()
@@ -21,6 +22,11 @@ export class ConfigsController {
       return this.configsService.findAllWhereUser(params.id);
     }
   
+    @Get('/user/admin/:id')
+    findAllWhereUserAdmin(@Param() params): Promise<Config[]> {
+      return this.configsService.findAllWhereUser(params.id);
+    }
+
     @Get(':id')
     findOne(@Param('id') id: number) {
       return this.configsService.findOne(id);
@@ -29,6 +35,7 @@ export class ConfigsController {
     @Put(':id')
     update(@Param('id') id: number, @Body() config: Config) {
       this.configsService.update(id, config);
+      return config;
     }
   
     @Delete(':id')
