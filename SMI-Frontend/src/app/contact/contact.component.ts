@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
+   
 
   formContact = this.formBuilder.group({
     firstname: ['', Validators.required],
@@ -19,48 +19,17 @@ export class ContactComponent implements OnInit {
     mail: ['', [Validators.required, Validators.email]],
     message: ['', Validators.required],
   });
-
-  public error: string;
-  submitted = false;
-  submittedLog = false;
-
-  constructor(
-    private formBuilder: FormBuilder, 
-    private auth: AuthService, 
-    private router: Router
-    )
-  { }
-
-
   
 
+  constructor( private formBuilder: FormBuilder ) { }
+
+
   ngOnInit(): void {
-    this.error = "";
+
   }
 
  
   submitContact(){
-    this.submittedLog = true;
-
-    //Verification de la validité du formulaire. 
-    //Si non valide, stop fonction
-    if (this.formContact.invalid) {
-        return;
-    }
-
-    //Envoie du formulaire
-    this.auth.login(this.formContact.value).subscribe(
-      data =>{
-        if(data.access_token != null || data.access_token != undefined){
-          localStorage.setItem('token', data.access_token);
-          this.router.navigate(['/']);
-        }
-      },
-      err => {
-        console.log(err);
-        this.error ="Adresse mail incorrect";
-      }
-    )
   }
 
 
