@@ -32,7 +32,7 @@ h2.title-about-history{
 .about-grid {
     display: grid;
     grid-template-columns: 450px auto;
-    justify-items: center;   
+    justify-items: center;
     grid-gap: 25px;
     width: 100%;
     align-items: center;

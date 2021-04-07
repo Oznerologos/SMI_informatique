@@ -1,1 +1,66 @@
-<p>ezconfig works!</p>
+<ff-alerts></ff-alerts>
+<h2>Configuration simplifiée</h2>
+
+<p *ngIf="currentStep != 'recap'">Bonjour, bienvenue sur notre simulateur simplifié, le simulateur qui vous aide à comprendre votre ordinateur !</p>
+<p *ngIf="currentStep != 'recap'">Répondez a nos questions afin que nous puissions vous orienter au mieux sur les pièeces correspondant à vos besoins.</p>
+
+<div class="step" *ngIf="currentStep == 'start'">
+    <p>Quelle sera l'utilisation principale de votre ordinateur ?</p>
+    <ul>
+        <li (click)="nextStep('gamme','Bureautique')">Bureautique</li>
+        <li (click)="nextStep('stream','Gaming')">Gaming</li>
+        <li (click)="nextStep('musique','Vidéo')">Traitement Vidéo / Image</li>
+        <li (click)="nextStep('video','Son')">Traitement du Son</li>
+    </ul>
+</div>
+
+
+
+
+<div class="step" *ngIf="currentStep == 'stream'">
+    <p>Envisagez vous de streamer ou produire du contenu vidéo ? (Twitch, Youtube, etc...)</p>
+    <ul>
+        <li (click)="nextStep('gamme','Streaming / Youtube : oui')">Oui</li>
+        <li (click)="nextStep('gamme','Streaming / Youtube : non ')">Non</li>
+    </ul>
+</div>
+
+<div class="step" *ngIf="currentStep == 'musique'">
+    <p>Envisagez vous de travailler avec du son ? (musique, clip, etc...)</p>
+    <ul>
+        <li (click)="nextStep('gamme','Musique : Oui')">Oui</li>
+        <li (click)="nextStep('gamme','Musique : non')">Non</li>
+    </ul>
+</div>
+
+<div class="step" *ngIf="currentStep == 'video'">
+    <p>Envisagez vous de travailler de l'image ou de la vidéo ? (clip, montage vidéo, etc...)</p>
+    <ul>
+        <li (click)="nextStep('gamme','Vidéo : oui')">Oui</li>
+        <li (click)="nextStep('gamme','Vidéo : non')">Non</li>
+    </ul>
+</div>
+
+<div class="step" *ngIf="currentStep == 'gamme'">
+    <p>Quelle type de gamme souhaiteriez-vous ?</p>
+    <ul>
+        <li (click)="nextStep('recap', 'Bas de gamme')"> Bas de gamme</li>
+        <li (click)="nextStep('recap', 'Milieu de gamme')">Milieu de gamme</li>
+        <li (click)="nextStep('recap', 'Haut de gamme')">Haut de gamme</li>
+        <li (click)="nextStep('recap', 'Très haut de gamme')">Très haut de gamme</li>
+    </ul>
+</div>
+
+<div class="step" *ngIf="currentStep=='recap'">
+    <span>Vous avez terminé votre configuration ! </span>
+    <span>Voici vos options : </span>
+    <ul>
+        <li class="final" *ngFor="let option of config"> {{option}} </li>
+    </ul>
+    <button (click)="submit()">Valider la configuration</button>
+</div>
+
+
+<div class="previous" *ngIf="currentStep != 'start'" >
+    <div (click)="previous()"><i class="fas fa-arrow-left"></i> Page précédente</div>
+</div>

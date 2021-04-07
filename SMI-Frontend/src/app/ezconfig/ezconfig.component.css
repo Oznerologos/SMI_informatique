@@ -1,0 +1,87 @@
+.step p{
+    background-color: #575b98;
+    width: fit-content;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 50px;
+}
+
+.step ul{
+    padding: 0;
+}
+.step li{
+    display: block;
+    width : 20%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #E5E4E4;
+    padding: 10px 0px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+.step li.final{
+    display: block;
+    width : 20%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #575b98;
+    padding: 10px 0px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 50px;
+    color: white;
+    cursor: default;
+}
+
+.step{
+    padding-bottom: 20px;
+}
+
+.previous{
+    
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 20px;
+}
+
+.previous div{
+    cursor: pointer;
+    text-align: center;
+}
+
+h2{
+    padding-top: 50px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+button{
+    display: block;
+    width : 30%;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #ee7412;
+    padding: 10px 0px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+span{
+    display: block;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}

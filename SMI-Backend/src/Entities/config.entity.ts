@@ -90,6 +90,6 @@ export class Config {
     @Column()
     validated: boolean;
 
-    @Column('text')
+    @Column('text',{nullable: true})
     message: string;
 }

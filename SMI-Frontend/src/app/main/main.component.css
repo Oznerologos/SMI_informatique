@@ -4,6 +4,7 @@
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+    text-align: justify;
 }
 
 
@@ -35,15 +36,15 @@
     box-shadow: 7px 7px 7px 1px rgba(99, 99, 99, 0.32);
     -webkit-box-shadow: 7px 7px 7px 1px  rgba(99, 99, 99, 0.32);
     -moz-box-shadow: 7px 7px 7px 1px  rgba(99, 99, 99, 0.32);
-
 }
-
 .presentation img {
     width: 75%;
     height: 75%; 
     margin-left: -4.8%;
 }
-
+.presentation p {
+    text-align: justify;
+}
 .presentation a {
     display: inline-block;
     margin-bottom: 10px;
