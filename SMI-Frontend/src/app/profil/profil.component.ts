@@ -13,26 +13,31 @@ export class ProfilComponent implements OnInit {
   formGroup: FormGroup;
   idUser = null;
   dataUser = null;
+  listConfigs = [];
   existUser: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService, 
+    private authService: AuthService,
     private adminService: AdminService,
     private router: Router
-    ) {
-      if (localStorage.getItem('token')) {
-        this.idUser = this.authService.getUserId();
-      }
+  ) {
+    if (localStorage.getItem('token')) {
+      this.idUser = this.authService.getUserId();
     }
+  }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.existUser = false;
     if (this.idUser) {
       this.adminService.getUser(this.idUser).subscribe((res) => {
         this.dataUser = res;
         this.existUser = true;
         this.initFormGroup();
+
+        this.adminService.getConfigsUser(this.idUser).subscribe((res) => {
+          this.listConfigs = res;
+        });
       });
     }
   }
@@ -74,5 +79,25 @@ export class ProfilComponent implements OnInit {
       //   'Error'
       // );
     }
+  }
+
+  public onAdd() {
+    this.router.navigateByUrl('/Config');
+  }
+
+  public onUpdate(configId: number) {
+    this.router.navigateByUrl('/Config/' + configId);
+  }
+
+  public onDelete(configId: number) {
+    this.adminService.deleteConfig(configId).subscribe(
+      (res) => {
+        this.adminService.getConfigsUser(this.idUser).subscribe((res) => {
+          this.listConfigs = res;
+        });
+      },
+      (err) => {
+      }
+    );
   }
 }
