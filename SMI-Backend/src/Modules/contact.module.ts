@@ -11,8 +11,8 @@ import { ContactController } from 'src/controllers/contact.controller';
         port: 465,
         secure: true,
         auth: {
-          user: 'noreply@smi83.com',
-          pass: 'smi083470',
+          user: 'developpement1996@gmail.com',
+          pass: 'Developpement1996!',
         },
       },
       preview: true,
