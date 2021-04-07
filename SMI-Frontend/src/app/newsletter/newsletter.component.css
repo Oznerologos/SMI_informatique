@@ -1,0 +1,95 @@
+/* CONTACT */
+
+.newsletter p{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.header-newsletter {
+    background-image: url(../../assets/img/newsletter/header-newsletter.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 250px; 
+    width: 100%;
+}
+
+.newsletter-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 31px;
+    font-weight: 700;
+    color: #575b98;
+}
+.newsletter-container p{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #575b98;
+}
+
+.newsletter-container {
+    padding: 70px 300px;
+    margin: 0 auto 0 auto;
+}
+
+.form-newsletter input{
+    background-color: white;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 0;
+    width: 100%;
+}
+.form-newsletter input {
+    height: 40px;
+}
+
+.submit-newsletter {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 10px 65px;
+    border-radius: 15px;
+    color: white;
+    background-color: #ee7412;
+    border: 0;
+}
+
+/* NEWSLETTER RESPONSIVE */ 
+
+
+@media screen and (min-width: 1500px)
+{
+    .newsletter-container {
+        padding: 70px 700px;
+        margin: 0 auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 1240px)
+{
+    .newsletter-container {
+        padding: 70px 100px;
+        margin: 0 auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 740px)
+{
+    .newsletter-container {
+        padding: 70px 10px;
+        margin: 0 auto 0 auto;
+    }
+}
+
+
+/* ERREUR */
+
+.invalid{
+    color: red;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}

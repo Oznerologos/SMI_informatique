@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-newsletter',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsletterComponent implements OnInit {
 
-  constructor() { }
+  formNewsletter = this.formBuilder.group({
+    firstname: ['', Validators.required],
+  });
+  constructor( private formBuilder: FormBuilder ) { }
+
+  submitNewsletter(){
+  }
 
   ngOnInit(): void {
   }
