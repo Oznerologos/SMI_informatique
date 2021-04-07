@@ -21,7 +21,19 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
-  {path: 'Config', canActivate: [AuthGuardService], component: ConfigComponent},
+  {
+    path: 'Config',     
+    children: [
+      {
+        path: '', canActivate: [AuthGuardService],
+        component: ConfigComponent,
+      },
+      {
+        path: ':id', canActivate: [AuthGuardService],
+        component: ConfigComponent,
+      },
+    ]
+  },
   {path: 'EZConfig', canActivate: [AuthGuardService], component: EzconfigComponent},
   {path: '', component: MainComponent},
   {path: 'contact', component: ContactComponent},
