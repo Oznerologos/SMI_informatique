@@ -1,5 +1,5 @@
 <div *ngIf="formGroup">
-    <form [formGroup]="formGroup" (submit)="onSubmit()" style="width: 40%; margin: 2rem;">
+    <form [formGroup]="formGroup" (submit)="onSubmit()" class="center">
 
         <div class="form-group">
             <label for="firstname">Prénom*</label><br>
@@ -34,7 +34,7 @@
         </div> -->
         </div>
 
-        <div *ngIf="idUser == null" class="form-register">
+        <div *ngIf="idUser == null" class="form-group">
             <label for="password">Mot de passe*</label><br>
             <input type="password" name="password" id="passwordRegister" formControlName="password">
             <!-- <div *ngIf="submitted && password.errors" class="invalid">
@@ -64,11 +64,10 @@
                 <option value="admin">Admin</option>
             </select>
         </div>
-
-        <button *ngIf="idUser == null" type="submit" class="btn btn-primary">Créer</button>
-        <button *ngIf="idUser != null" type="submit" class="btn btn-primary">Mettre à jour</button>
-        <i>* : Informations obligatoires</i>
+        <i>* : Informations obligatoires</i><br><br>
+        <button *ngIf="idUser == null" type="submit" class="btn BleuBlanc">Créer</button>
+        <button *ngIf="idUser != null" type="submit" class="btn BleuBlanc">Mettre à jour</button>
     </form>
 </div>
-<button class="button" (click)="retour()">Retour</button>
+<button class="Orange" style="margin-left: 0;" (click)="retour()">Retour</button>
 <!-- <p class="error" *ngIf="error != ''"> {{error}}</p> -->
