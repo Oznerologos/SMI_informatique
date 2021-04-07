@@ -1,31 +1,4 @@
 <div class="contact">
-
-    <div class="row align-items-center">
-        <div class="form col-12">
-            <div class="form col-6 mx-auto">
-                <h2 class="title-contact">Contactez-nous!</h2>
-
-                <form class="form-contact form-group" [formGroup]="formContact" (ngSubmit)="submitContact()">
-
-                    <div class="form-contact">
-                        <label for="firstname">Prénom*</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname"
-                            formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && firstname.errors }"><br>
-                        <div *ngIf="submitted && firstname.errors" class="invalid">
-                            <div *ngIf="firstname.errors.required">
-                                Le prénom est requis
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-contact">
-                        <label for="lastname">Nom*</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname" formControlName="lastname"
-                            [ngClass]="{ 'is-invalid': submitted && lastname.errors }"><br>
-                        <div *ngIf="submitted && lastname.errors" class="invalid">
-                            <div *ngIf="lastname.errors.required">
-                                Le nom est requis
-
     <div class="header-contact"></div>
     <div class="contact-container">
         <form id="formContact" [formGroup]="formContact" (ngSubmit)="submitContact()">
@@ -35,68 +8,41 @@
                 <div>
                     <div class="form-contact">
                         <label class="center-block">Nom* :</label>
-                        <input type="text" id="lastname"  name="lastname" formControlName="lastname" >
-                        <div *ngIf="formContact.controls['lastname'].invalid && (formContact.controls['lastname'].touched)" class="invalid">
+                        <input type="text" id="lastname" name="lastname" formControlName="lastname">
+                        <!-- <div *ngIf="formContact.controls['lastname'].invalid && (formContact.controls['lastname'].touched)"
+                            class="invalid">
                             <div *ngIf="formContact.controls['lastname'].errors.required">
                                 Le nom est requis
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                    
+
                     <div class="form-contact">
                         <label for="firstname">Société (facultatif) :</label>
-                        <input type="text" id="society" name="society" formControlName="society" >
+                        <input type="text" id="society" name="society" formControlName="society">
                     </div>
                 </div>
                 <div>
                     <div class="form-contact">
                         <label for="firstname">Prénom* :</label>
                         <input type="text" id="firstname" name="firstname" formControlName="firstname">
-                        <div *ngIf="formContact.controls['firstname'].invalid && (formContact.controls['firstname'].touched)" class="invalid">
+                        <!-- <div *ngIf="formContact.controls['firstname'].invalid && (formContact.controls['firstname'].touched)"
+                            class="invalid">
                             <div *ngIf="formContact.controls['firstname'].errors.required">
                                 Le prénom est requis
-
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="form-contact">
-
-                        <label for="mail">E-mail*</label>
-                        <input type="email" class="form-control" id="mail" name="mail" formControlName="mail"
-                            [ngClass]="{ 'is-invalid': submitted && mail.errors }"><br>
-                        <div *ngIf="submitted && mail.errors" class="invalid">
-                            <div *ngIf="mail.errors.required">
-                                L'adresse email est requise
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-contact">
-                        <label for="message">Message*</label>
-                        <textarea class="form-control" id="message" name="message" formControlName="message"
-                            [ngClass]="{ 'is-invalid': submitted && message.errors }">Ajouter votre message ici....</textarea><br>
-                        <div *ngIf="submitted && firstname.errors" class="invalid">
-                            <div *ngIf="firstname.errors.required">
-                                Un message est requis
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <i>* : Informations obligatoires</i><br>
-
-                    <button type="submit" class="btn BleuBlanc center-block">Envoyer</button>
-                </form>
-                <p class="error" *ngIf="error != ''"> {{error}}</p>
-
                         <label for="mail">Téléphone* :</label>
-                        <input type="text" id="phone" name="phone" formControlName="phone">
-                        <div *ngIf="formContact.controls['phone'].invalid && (formContact.controls['phone'].touched)" class="invalid">
+                        <input type="text" id="phone" name="number" formControlName="phone">
+                        <!-- <div *ngIf="formContact.controls['phone'].invalid && (formContact.controls['phone'].touched)"
+                            class="invalid">
                             <div *ngIf="formContact.controls['phone'].errors.required">
                                 Le numéro est requis
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -104,33 +50,32 @@
             <div class="form-contact">
                 <label for="mail">Adresse mail* :</label>
                 <input type="email" id="mail" name="mail" formControlName="mail">
-                <div *ngIf="formContact.controls['mail'].invalid && (formContact.controls['mail'].touched)" class="invalid">
+                <!-- <div *ngIf="formContact.controls['mail'].invalid && (formContact.controls['mail'].touched)"
+                    class="invalid">
                     <div *ngIf="formContact.controls['mail'].errors.required">
                         L'adresse e-mail est requise
                     </div>
-                </div>
-
+                </div> -->
             </div>
 
             <div class="form-contact">
                 <label for="message">Écrivez votre message* :</label>
-                <textarea id="message" name="message" formControlName="message" rows="5">Ajoutez votre message ici....</textarea>
-                <div *ngIf="formContact.controls['message'].invalid && (formContact.controls['message'].touched)" class="invalid">
+                <textarea id="message" name="message" formControlName="message" rows="5"
+                    placeholder="Ajoutez votre message ici ..."></textarea>
+                <!-- <div *ngIf="formContact.controls['message'].invalid && (formContact.controls['message'].touched)"
+                    class="invalid">
                     <div *ngIf="formContact.controls['message'].errors.required">
                         Le message est requis
                     </div>
-                </div>
+                </div> -->
             </div>
-            
-            <button type="submit" class="submit-contact"><i class="fas fa-paper-plane"></i><b style="margin-left: 15px">Envoyer</b></button>      
+
+            <button type="submit" class="submit-contact"><i class="fas fa-paper-plane"></i><b
+                    style="margin-left: 15px">Envoyer</b></button>
         </form>
     </div>
     <div class="footer-contact">
-        <p><b style="font-size: 28px;">Plus d'informations</b><br>Vous souhaitez mieux nous connaitre ? Alors retrouvez-nous sur les réseaux sociaux</p>
+        <p><b style="font-size: 28px;">Plus d'informations</b><br>Vous souhaitez mieux nous connaitre ? Alors
+            retrouvez-nous sur les réseaux sociaux</p>
     </div>
-
 </div>
-
- </div>  
-
-

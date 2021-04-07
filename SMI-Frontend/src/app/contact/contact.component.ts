@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,15 +21,26 @@ export class ContactComponent implements OnInit {
   });
   
 
-  constructor( private formBuilder: FormBuilder ) { }
+  constructor( private formBuilder: FormBuilder, private router: Router, private authService: AuthService ) { }
 
 
   ngOnInit(): void {
-
   }
-
  
   submitContact(){
+    if (this.formContact.valid) {
+        this.authService.sendMail(this.formContact.value).subscribe(
+          (res) => {
+            console.log(res);
+            this.router.navigateByUrl('/');
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+      }else {
+        console.log('error');
+      }
   }
 
 
@@ -60,4 +71,3 @@ export class ContactComponent implements OnInit {
   }
 
 }
-
