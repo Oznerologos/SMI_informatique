@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-ezconfig',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EzconfigComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private user: AuthService,
+    http : HttpClient,
+  ) { }
 
   ngOnInit(): void {
   
@@ -19,7 +24,7 @@ export class EzconfigComponent implements OnInit {
 
   configObj : {
     name: 'Config Auto', 
-    budget: '',
+    budget ,
     mounted: 'Oui',
     cpu: 'Choisissez pour moi !',
     motherboard: 'Choisissez pour moi !',
@@ -43,7 +48,7 @@ export class EzconfigComponent implements OnInit {
     antivirus: 'Choisissez pour moi !',
     microsoftoffice: 'Choisissez pour moi !',
     inverter: 'Choisissez pour moi !',
-    message:'Choisissez pour moi !',
+    message:'',
     soundboard:'Choisissez pour moi !',
     validated:'Oui',
     user:''
@@ -66,6 +71,34 @@ export class EzconfigComponent implements OnInit {
   }
 
   submit(){
+    this.configObj.user =this.user.getUserId();
+    switch (this.config[this.config.length -1]) {
+      case "Bas de gamme":
+        this.configObj.budget =1400;
+        break;
+
+      case "Milieu de gamme":
+        this.configObj.budget = 1900;
+        break;
+
+      case "Haut de gamme":
+        this.configObj.budget = 2200;
+        break;
+
+      case "Très haut de gamme" : 
+      this.configObj.budget = 2500;
+        break;
+      default:
+        this.configObj.budget = 0;
+        break;
+    }
     
+    this.config.forEach(element => {
+      this.configObj.message += element;
+    });
+
+    console.log(this.configObj)
+
+
   }
 }
