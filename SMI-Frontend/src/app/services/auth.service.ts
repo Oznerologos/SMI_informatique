@@ -14,6 +14,8 @@ export class AuthService {
   public URL_RESET = "http://localhost:3000/reset";
   public URL_VERIFY_TOKEN = "http://localhost:3000/user";
   public isAdmin = false;
+  public prenom = "prenom";
+  public nom = "nom";
 
   constructor(private http: HttpClient, private router: Router) { }
 

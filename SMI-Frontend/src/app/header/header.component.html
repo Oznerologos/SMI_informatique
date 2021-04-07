@@ -21,12 +21,12 @@
         <div id="headerOne-five">
             <a *ngIf="authService.loggedIn()" routerLink="/profil"><img class="img-profil"
                     src="../../assets/img/profilTest.jpg" alt="Image de profil">
-                <p>{{dataUser.firstname}} {{dataUser.lastname}}</p>
+                <p>{{this.authService.prenom}} {{this.authService.nom}}</p>
             </a>
         </div>
     </div>
     <div id="headerTwo">
-        <div id="headerTwo-one" *ngIf="authService.loggedIn() && !isRouteAdminUser() && !isRouteAdminUserDetail() && !isRouteAdminConfig() && !isRouteAdminConfigDetail()">
+        <div id="headerTwo-one" *ngIf="authService.loggedIn() && !isRouteAdminUser() && !isRouteAdminUserDetail() && !isRouteAdminConfig() && !isRouteAdminConfigDetail() && !isRouteAdmin()">
             <a routerLink="/EZConfig" class="BleuBlanc">Configuration simple</a>
             <a routerLink="/Config" class="Orange">Configuration avancée</a>
         </div>
