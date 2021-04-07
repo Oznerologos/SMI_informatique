@@ -65,3 +65,23 @@ p{
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
+
+button{
+    display: block;
+    width : 30%;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #ee7412;
+    padding: 10px 0px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+span{
+    display: block;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}

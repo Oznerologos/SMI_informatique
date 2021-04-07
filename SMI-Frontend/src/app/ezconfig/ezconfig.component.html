@@ -1,7 +1,8 @@
-
+<ff-alerts></ff-alerts>
 <h2>Configuration simplifiée</h2>
-<p>Bonjour, bienvenue sur notre simulateur simplifié, le simulateur qui vous aide à comprendre votre ordinateur !</p>
-<p>Répondez a nos questions afin que nous puissions vous orienter au mieux sur les pièeces correspondant à vos besoins.</p>
+
+<p *ngIf="currentStep != 'recap'">Bonjour, bienvenue sur notre simulateur simplifié, le simulateur qui vous aide à comprendre votre ordinateur !</p>
+<p *ngIf="currentStep != 'recap'">Répondez a nos questions afin que nous puissions vous orienter au mieux sur les pièeces correspondant à vos besoins.</p>
 
 <div class="step" *ngIf="currentStep == 'start'">
     <p>Quelle sera l'utilisation principale de votre ordinateur ?</p>
@@ -19,7 +20,7 @@
 <div class="step" *ngIf="currentStep == 'stream'">
     <p>Envisagez vous de streamer ou produire du contenu vidéo ? (Twitch, Youtube, etc...)</p>
     <ul>
-        <li (click)="nextStep('gamme','Steaming / Youtube : oui')">Oui</li>
+        <li (click)="nextStep('gamme','Streaming / Youtube : oui')">Oui</li>
         <li (click)="nextStep('gamme','Streaming / Youtube : non ')">Non</li>
     </ul>
 </div>
@@ -51,8 +52,8 @@
 </div>
 
 <div class="step" *ngIf="currentStep=='recap'">
-    Vous avez terminé votre configuration ! 
-    Voici vos options : 
+    <span>Vous avez terminé votre configuration ! </span>
+    <span>Voici vos options : </span>
     <ul>
         <li class="final" *ngFor="let option of config"> {{option}} </li>
     </ul>

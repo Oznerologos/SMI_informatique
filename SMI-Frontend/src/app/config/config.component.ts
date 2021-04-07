@@ -447,7 +447,7 @@ export class ConfigComponent implements OnInit {
     if (this.configForm.get('id').value != null) {
       this.http.put("http://localhost:3000/configs/" + this.configForm.get('id').value, this.configForm.value, this.httpOptions).subscribe()
       console.log(this.configForm.value)
-    } else if (this.configForm.controls["name"].value != "" && this.configForm.controls["budget"].value != "" && this.configForm.controls["mounted"].value != "") {
+    } else if (this.configForm.controls["name"].value != "" && this.configForm.controls["budget"].value != null && this.configForm.controls["mounted"].value != "") {
       this.configForm.controls['user'].setValue(this.user.getUserId())
       this.http.post("http://localhost:3000/configs", this.configForm.value, this.httpOptions).subscribe()
       console.log(this.configForm.value)
@@ -467,7 +467,7 @@ export class ConfigComponent implements OnInit {
       if (this.configForm.controls["name"].value == "") {
         this.alertService.warning('Remplissez le nom de la config')
       }
-      if (this.configForm.controls["budget"].value == "") {
+      if (this.configForm.controls["budget"].value == null) {
         this.alertService.warning("Remplissez le budget de la config")
       }
       if (this.configForm.controls["mounted"].value == "") {
