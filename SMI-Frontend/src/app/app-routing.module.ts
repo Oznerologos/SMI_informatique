@@ -54,7 +54,7 @@ const routes: Routes = [
     component: ConfigListComponent,
   },
   {
-    path: 'configDetails/:id', canActivate: [AuthGuardService, AdminGuardService],
+    path: 'configDetails/:id', canActivate: [AuthGuardService],
     component: ConfigDetailsComponent,
   },
   {
