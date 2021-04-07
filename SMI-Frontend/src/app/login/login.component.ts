@@ -41,6 +41,8 @@ export class LoginComponent implements OnInit {
           this.auth.roleUser().subscribe(
             data =>{
               this.auth.userRole(data.role);
+              this.auth.prenom = data.firstname;
+              this.auth.nom = data.lastname;
             }
           );
           this.router.navigate(['/']);

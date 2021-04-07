@@ -15,7 +15,6 @@ import { EzconfigComponent } from './ezconfig/ezconfig.component';
 import { MainComponent } from './main/main.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { LoginregisterComponent } from './loginregister/loginregister.component';
 import { ResponseResetPasswordComponent } from './response-reset-password/response-reset-password.component';
 import { AuthService } from './services/auth.service';
 import { ProfilComponent } from './profil/profil.component';
@@ -32,6 +31,7 @@ import { AdminService } from './services/admin.service';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,6 @@ import { RegisterComponent } from './register/register.component';
     MainComponent,
     ContactComponent,
     AboutComponent,
-    LoginregisterComponent,
     ResponseResetPasswordComponent,
     ProfilComponent,
     UserListComponent,
@@ -54,7 +53,8 @@ import { RegisterComponent } from './register/register.component';
     ConfigListComponent,
     NewsletterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

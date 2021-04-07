@@ -1,10 +1,45 @@
-<div class="card" style="width: 18rem; margin: 2rem;" *ngIf="existConfig">
-    <div class="card-body">
-        <p class="card-text">Budget : {{ dataConfig.budget }}</p>
-        <p class="card-text">Monté : {{ dataConfig.mounted }}</p>
-        <p class="card-text">Cpu : {{ dataConfig.cpu }}</p>
-        <p class="card-text">Carte Mère : {{ dataConfig.motherboard }}</p>
-        <p class="card-text">Ram : {{ dataConfig.ram }}</p>
+<div class="card" style="margin: 2rem;" *ngIf="existConfig">
+    <div class="card-body row">
+        <div class="col-sm-6">
+            <p class="card-text">
+                Utilisateur : {{dataConfig.user.firstname}} {{dataConfig.user.lastname}}
+            </p>
+            <p class="card-text">Nom : {{ dataConfig.name }}</p>
+            <p class="card-text">Budget : {{ dataConfig.budget }} €</p>
+            <p class="card-text">Monté : {{ dataConfig.mounted }}</p>
+            <p class="card-text">Cpu : {{ dataConfig.cpu }}</p>
+            <p class="card-text">Carte Mère : {{ dataConfig.motherboard }}</p>
+            <p class="card-text">Ram : {{ dataConfig.ram }}</p>
+            <p class="card-text">Système de refroidissement : {{ dataConfig.coolingsystem }}</p>
+            <p class="card-text">Carte Graphique : {{ dataConfig.gpu }}</p>
+            <p class="card-text">SSD1 : {{ dataConfig.ssd1 }}</p>
+            <p class="card-text">SSD2 : {{ dataConfig.ssd2 }}</p>
+            <p class="card-text">HHD1 : {{ dataConfig.hdd1 }}</p>
+            <p class="card-text">HDD2 : {{ dataConfig.hdd2 }}</p>
+            <p class="card-text">Lecteur CD : {{ dataConfig.cdplayerburner }}</p>
+            <p class="card-text">Lecteur de Carte : {{ dataConfig.cardsplayer }}</p>
+        </div>
+        <div class="col-sm-6">
+            <p class="card-text">Carte Wifi : {{ dataConfig.wifiboard }}</p>
+            <p class="card-text">Boitier : {{ dataConfig.case }}</p>
+            <p class="card-text">Premier écran : {{ dataConfig.display1 }}</p>
+            <p class="card-text">Second écran : {{ dataConfig.display2 }}</p>
+            <p class="card-text">Unité centrale : {{ dataConfig.powerunit }}</p>
+            <p class="card-text">Clavier : {{ dataConfig.keyboard }}</p>
+            <p class="card-text">Souris : {{ dataConfig.mouse }}</p>
+            <p class="card-text">OS : {{ dataConfig.os }}</p>
+            <p class="card-text">Antivirus : {{ dataConfig.antivirus }}</p>
+            <p class="card-text">Microsoft Office : {{ dataConfig.microsoftoffice }}</p>
+            <p class="card-text">Carte Son : {{ dataConfig.soundboard }}</p>
+            <p class="card-text">Onduleur : {{ dataConfig.inverter }}</p>
+            <p *ngIf="dataConfig.validated">
+                Validé : Oui
+            </p>
+            <p *ngIf="!dataConfig.validated">
+                Validé : Non
+            </p>
+            <p class="card-text">Message : {{ dataConfig.message }}</p>
+        </div>
     </div>
-    <button class="button" (click)="retour()">Retour</button>
 </div>
+<button class="Orange" style="margin-left:0" (click)="retour()">Retour</button>

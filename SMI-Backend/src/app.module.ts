@@ -11,6 +11,7 @@ import { ConfigsModule } from './modules/configs.module';
 import { NewslettersModule } from './modules/newsletters.module';
 import { ResetPasswordModule } from './modules/reset-password.module';
 import { AuthModule } from './auth/auth.module';
+import { ContactModule } from './modules/contact.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -24,7 +25,7 @@ import { AuthModule } from './auth/auth.module';
     synchronize: true,
     logger: 'simple-console',
   }),
-  AuthModule, UsersModule, ConfigsModule, NewslettersModule, ResetPasswordModule],
+  AuthModule, UsersModule, ConfigsModule, NewslettersModule, ResetPasswordModule, ContactModule],
   controllers: [AppController],
   providers: [AppService],
 })

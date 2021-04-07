@@ -1,5 +1,5 @@
 <div *ngIf="formGroup">
-    <form [formGroup]="formGroup" (submit)="onSubmit()" style="width: 40%; margin: 2rem;">
+    <form [formGroup]="formGroup" (submit)="onSubmit()" class="center">
 
         <div class="form-group">
             <label for="firstname">Prénom*</label><br>
@@ -34,6 +34,19 @@
         </div> -->
         </div>
 
+        <div *ngIf="idUser == null" class="form-group">
+            <label for="password">Mot de passe*</label><br>
+            <input type="password" name="password" id="passwordRegister" formControlName="password">
+            <!-- <div *ngIf="submitted && password.errors" class="invalid">
+                <div *ngIf="password.errors.required">
+                    Le mot de passe est requis
+                </div>
+                <div *ngIf="password.errors.minlength">
+                    Le mot de passe doit contenir au minimum 8 caractères
+                </div>
+            </div> -->
+        </div>
+
         <div class="form-group">
             <label for="phone">Numéro de téléphone*</label><br>
             <input type="tel" name="phone" id="phoneRegister" formControlName="phone">
@@ -51,10 +64,10 @@
                 <option value="admin">Admin</option>
             </select>
         </div>
-
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-        <i>* : Informations obligatoires</i>
+        <i>* : Informations obligatoires</i><br><br>
+        <button *ngIf="idUser == null" type="submit" class="btn BleuBlanc">Créer</button>
+        <button *ngIf="idUser != null" type="submit" class="btn BleuBlanc">Mettre à jour</button>
     </form>
 </div>
-<button class="button" (click)="retour()">Retour</button>
+<button class="Orange" style="margin-left: 0;" (click)="retour()">Retour</button>
 <!-- <p class="error" *ngIf="error != ''"> {{error}}</p> -->

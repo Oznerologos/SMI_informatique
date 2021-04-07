@@ -41,6 +41,7 @@ export class UserFormComponent implements OnInit {
       firstname: [this.dataUser ? this.dataUser.firstname : null, [Validators.required]],
       lastname: [this.dataUser ? this.dataUser.lastname : null, [Validators.required]],
       mail: [this.dataUser ? this.dataUser.mail : null, [Validators.required, Validators.email]],
+      password: [this.dataUser ? this.dataUser.password : null, [Validators.required, Validators.minLength(8)]],
       phone: [this.dataUser ? this.dataUser.phone : null, [Validators.required]],
       role: [this.dataUser ? this.dataUser.role : null]
     })
@@ -58,13 +59,13 @@ export class UserFormComponent implements OnInit {
           (err) => {
             console.log(err);
             // this.toastr.error(
-            //   "Une erreur est survenue lors de l'envoi du formulaire de modification de user.",
+            //   "Une erreur est survenue lors de l'envoi du formulaire de modification du user.",
             //   'Error occured'
             // );
           }
         );
       } else {
-        this.adminService.createUser(this.formGroup.value).subscribe(
+        this.adminService.createUserAdmin(this.formGroup.value).subscribe(
           (res) => {
             console.log(res);
             // this.toastr.success(`User enregistré`, 'Success');
@@ -73,7 +74,7 @@ export class UserFormComponent implements OnInit {
           (err) => {
             console.log(err);
             // this.toastr.error(
-            //   "Une erreur est survenue lors de l'envoi du formulaire de création de user.",
+            //   "Une erreur est survenue lors de l'envoi du formulaire de création du user.",
             //   'Error occured'
             // );
           }

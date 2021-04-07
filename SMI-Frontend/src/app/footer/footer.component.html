@@ -1,4 +1,4 @@
-<div *ngIf="!isRouteLogin() && !isRouteRegister()">
+<div *ngIf="!isRouteLogin() && !isRouteRegister() && !isRoutePassword() && !isRouteAdminUser() && !isRouteAdminUserDetail() && !isRouteAdminConfig() && !isRouteAdminConfigDetail() && !isRouteAdmin()">
     <div id="footerOne">
         <div id="footerOne-one" >
             <a routerLink="/"><img class="img-smi" src="../../assets/img/smi.png" alt="Logo Smi"></a>
@@ -8,7 +8,7 @@
             <a routerLink="/">Accueil</a><br/>
             <a routerLink="/about">À propos de nous</a><br/>
             <a routerLink="/contact">Contact</a><br/>
-            <a>Newsletter</a><br/>
+            <a routerLink="/newsletter">Newsletter</a><br/>
             <a>Mentions légales</a><br/>
         </div>
         <div id="footerOne-three">
