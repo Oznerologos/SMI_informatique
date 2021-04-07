@@ -15,7 +15,6 @@ import { EzconfigComponent } from './ezconfig/ezconfig.component';
 import { MainComponent } from './main/main.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { LoginregisterComponent } from './loginregister/loginregister.component';
 import { ResponseResetPasswordComponent } from './response-reset-password/response-reset-password.component';
 import { AuthService } from './services/auth.service';
 import { ProfilComponent } from './profil/profil.component';
@@ -44,7 +43,6 @@ import { AdminComponent } from './admin/admin.component';
     MainComponent,
     ContactComponent,
     AboutComponent,
-    LoginregisterComponent,
     ResponseResetPasswordComponent,
     ProfilComponent,
     UserListComponent,

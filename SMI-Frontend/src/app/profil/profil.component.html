@@ -81,10 +81,10 @@
                     <td *ngIf="!config.validated">
                         Non
                     </td>
-                    <td>
+                    <td *ngIf="!config.validated">
                         <button class="btn BleuBlanc" type="submit" (click)="onUpdate(config.id)">
                             Modifier</button>
-                        <button *ngIf="!config.validated" class="btn Orange" type="button"
+                        <button class="btn Orange" type="button"
                             (click)="onDelete(config.id)">
                             Supprimer
                         </button>
