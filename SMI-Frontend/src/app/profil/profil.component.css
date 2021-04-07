@@ -14,5 +14,15 @@ button{
 .BleuBlanc{
     background-color: #575b98;
     border: 1px solid #575b98;
-    margin-right: 1.5em;
+    margin-right: 0.5em;
+}
+
+.Orange{
+    border: 1px solid #ee7412;
+    background-color: #ee7412;
+    margin-left: 0.5em;
+}
+
+a{
+    color:#575b98;
 }
