@@ -4,6 +4,7 @@ import { FormBuilder } from "@angular/forms";
 import { AlertService } from '@full-fledged/alerts';
 import { HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-config',
@@ -17,7 +18,8 @@ export class ConfigComponent implements OnInit {
     private formBuilder: FormBuilder,
     private alertService : AlertService,
     private http : HttpClient,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -243,6 +245,18 @@ export class ConfigComponent implements OnInit {
       this.configForm.controls['user'].setValue(this.user.getUserId())
       this.http.post("http://localhost:3000/configs" ,this.configForm.value, this.httpOptions).subscribe()
       console.log(this.configForm.value)
+
+      if (validated == true) {
+        this.alertService.success("Configuration enregistrée et envoyée a SMI")
+      } else {
+        this.alertService.success("Configuration sauvegardée")
+      }
+
+      setTimeout(() => {
+        this.router.navigateByUrl('')
+      }, 3000);
+      
+
     } else {
       if (this.configForm.controls["name"].value == "") {
         this.alertService.warning('Remplissez le nom de la config')
