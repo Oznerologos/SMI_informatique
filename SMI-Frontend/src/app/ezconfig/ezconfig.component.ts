@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AlertService } from '@full-fledged/alerts';
+
 
 @Component({
   selector: 'app-ezconfig',
@@ -11,47 +15,56 @@ export class EzconfigComponent implements OnInit {
 
   constructor(
     private user: AuthService,
-    http : HttpClient,
+    private router: Router,
+    private http : HttpClient,
+    private alertService: AlertService,
   ) { }
 
   ngOnInit(): void {
   
   }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  };
+
+
   steps= []
   currentStep = "start"
   config= []
 
-  configObj : {
-    name: 'Config Auto', 
-    budget ,
-    mounted: 'Oui',
-    cpu: 'Choisissez pour moi !',
-    motherboard: 'Choisissez pour moi !',
-    ram: 'Choisissez pour moi !',
-    coolingsystem: 'Choisissez pour moi !',
-    gpu: 'Choisissez pour moi !',
-    ssd1: 'Choisissez pour moi !',
-    ssd2: 'Choisissez pour moi !',
-    hdd1: 'Choisissez pour moi !',
-    hdd2: 'Choisissez pour moi !',
-    cdplayerburner: 'Choisissez pour moi !',
-    cardsplayer: 'Choisissez pour moi !',
-    wifiboard: 'Choisissez pour moi !',
-    case: 'Choisissez pour moi !',
-    display1: 'Choisissez pour moi !',
-    display2: 'Choisissez pour moi !',
-    powerunit: 'Choisissez pour moi !',
-    keyboard: 'Choisissez pour moi !',
-    mouse: 'Choisissez pour moi !',
-    os: 'Choisissez pour moi !',
-    antivirus: 'Choisissez pour moi !',
-    microsoftoffice: 'Choisissez pour moi !',
-    inverter: 'Choisissez pour moi !',
-    message:'',
-    soundboard:'Choisissez pour moi !',
-    validated:'Oui',
-    user:''
+  configObj = {
+    "name": 'Config Auto', 
+    "budget" : 0 ,
+    "mounted": 'Oui',
+    "cpu": 'Choisissez pour moi !',
+    "motherboard": 'Choisissez pour moi !',
+    "ram": 'Choisissez pour moi !',
+    "coolingsystem": 'Choisissez pour moi !',
+    "gpu": 'Choisissez pour moi !',
+    "ssd1": 'Choisissez pour moi !',
+    "ssd2": 'Choisissez pour moi !',
+    "hdd1": 'Choisissez pour moi !',
+    "hdd2": 'Choisissez pour moi !',
+    "cdplayerburner": 'Choisissez pour moi !',
+    "cardsplayer": 'Choisissez pour moi !',
+    "wifiboard": 'Choisissez pour moi !',
+    "case": 'Choisissez pour moi !',
+    "display1": 'Choisissez pour moi !',
+    "display2": 'Choisissez pour moi !',
+    "powerunit": 'Choisissez pour moi !',
+    "keyboard": 'Choisissez pour moi !',
+    "mouse": 'Choisissez pour moi !',
+    "os": 'Choisissez pour moi !',
+    "antivirus": 'Choisissez pour moi !',
+    "microsoftoffice": 'Choisissez pour moi !',
+    "inverter": 'Choisissez pour moi !',
+    "message":'CONFIG AUTOMATIQUE : ',
+    "soundboard":'Choisissez pour moi !',
+    "validated":'Oui',
+    "user":''
   }
 
   nextStep(nextStep, choix) {
@@ -72,6 +85,7 @@ export class EzconfigComponent implements OnInit {
 
   submit(){
     this.configObj.user =this.user.getUserId();
+   
     switch (this.config[this.config.length -1]) {
       case "Bas de gamme":
         this.configObj.budget =1400;
@@ -94,11 +108,16 @@ export class EzconfigComponent implements OnInit {
     }
     
     this.config.forEach(element => {
-      this.configObj.message += element;
+      this.configObj.message += element +" || ";
     });
 
-    console.log(this.configObj)
+    this.http.post("http://localhost:3000/configs", this.configObj, this.httpOptions).subscribe()
 
+    this.alertService.success("Configuration enregistrée et envoyée a SMI")
+
+    setTimeout(() => {
+      this.router.navigateByUrl('')
+    }, 1500);
 
   }
 }

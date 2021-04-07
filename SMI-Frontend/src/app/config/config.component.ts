@@ -446,6 +446,7 @@ export class ConfigComponent implements OnInit {
 
     if (this.configForm.get('id').value != null) {
       this.http.put("http://localhost:3000/configs/" + this.configForm.get('id').value, this.configForm.value, this.httpOptions).subscribe()
+    } else if (this.configForm.controls["name"].value != "" && this.configForm.controls["budget"].value != null && this.configForm.controls["mounted"].value != "") {
       if (validated == true) {
         this.alertService.success("Configuration enregistrée et envoyée a SMI")
       } else {
@@ -475,7 +476,7 @@ export class ConfigComponent implements OnInit {
       if (this.configForm.controls["name"].value == "") {
         this.alertService.warning('Remplissez le nom de la config')
       }
-      if (this.configForm.controls["budget"].value == "") {
+      if (this.configForm.controls["budget"].value == null) {
         this.alertService.warning("Remplissez le budget de la config")
       }
       if (this.configForm.controls["mounted"].value == "") {
