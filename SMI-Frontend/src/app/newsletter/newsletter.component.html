@@ -5,9 +5,9 @@
             <h2>Prêt à vous tenir informé des nos nouveautés</h2>
             <p>Vous pouvez alors souscrire à notre newsletter en nous indiquant votre adresse mail</p>
             <div class="form-newsletter">
-                <input type="email" id="email"  name="email" formControlName="email" >
-                <div *ngIf="formNewsletter.controls['email'].invalid && (formNewsletter.controls['email'].touched)" class="invalid">
-                    <div *ngIf="formNewsletter.controls['email'].errors.required">
+                <input type="mail" id="mail"  name="mail" formControlName="mail" >
+                <div *ngIf="formNewsletter.controls['mail'].invalid && (formNewsletter.controls['mail'].touched)" class="invalid">
+                    <div *ngIf="formNewsletter.controls['mail'].errors.required">
                         L'adresse mail est requise
                     </div>
                 </div>
