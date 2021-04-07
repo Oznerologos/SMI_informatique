@@ -60,7 +60,7 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    padding: 15px 70px;
+    padding: 15px 65px;
     border-radius: 20px;
     color: white;
     background-color: #575b98;
@@ -94,16 +94,6 @@
     }
 }
 
-@media screen and (max-width: 740px)
-{
-    .contact-container {
-        padding: 70px 0px;
-        margin: 0 auto 0 auto;
-    }
-}
-
-
-
 @media screen and (max-width: 1240px)
 {
     .contact-container {
@@ -121,11 +111,8 @@
 }
 
 
-/* A REVOIr */
+/* ERREUR */
 
-.error{
-    color: red;
-}
 .invalid{
     color: red;
     margin: 0;
