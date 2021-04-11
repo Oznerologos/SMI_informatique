@@ -12,7 +12,6 @@ h2.title-about-history{
     margin-bottom: 40px;
     font-size: 31px;
     font-weight: 700;
-    color: black;
 }
 .about-container {
     padding: 70px 0;
@@ -43,7 +42,7 @@ h2.title-about-history{
 
 .history-container {
     background-color: lightgray;
-    padding: 50px 60px;
+    padding: 70px 60px;
 }
 .history-grid {
     display: grid;
@@ -70,10 +69,13 @@ h2.title-about-history{
     }
 }
 
-@media screen and (max-width: 740px)
+@media screen and (max-width: 840px)
 {
     .aboutUs {
-        padding: 50px 20px;
+        padding: 10px 15px;
+    }
+    .history-container {
+        padding: 70px 15px;
     }
     .about-text {
         grid-template-columns: 1fr;
