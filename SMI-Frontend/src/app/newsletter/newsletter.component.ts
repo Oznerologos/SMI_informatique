@@ -19,7 +19,6 @@ export class NewsletterComponent implements OnInit {
   }
 
   submitNewsletter(){
-    console.log(this.formNewsletter.value);
     this.http.post("http://localhost:3000/newsletters", this.formNewsletter.value).subscribe();
   }
 
