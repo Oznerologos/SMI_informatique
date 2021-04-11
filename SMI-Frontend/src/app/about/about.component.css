@@ -3,11 +3,11 @@
 /* ABOUT CONTAINER */
 
 .about p{
-    text-align: left;
+    text-align: justify;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
 }
-h2.title-about-history{
+h2.title-about-all{
     text-align: center;
     margin-bottom: 40px;
     font-size: 31px;
@@ -38,16 +38,33 @@ h2.title-about-history{
     align-items: center;
 }
 
-/* HISTORY CONTAINER */
+/* ONE CONTAINER */
 
-.history-container {
-    background-color: lightgray;
+.one-container {
+    background-color: white;
     padding: 70px 60px;
 }
-.history-grid {
+.all-grid {
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 25px;
+}
+
+/* TWO CONTAINER */
+.two-container {
+    background-color: lightgray;
+    padding: 70px 60px;
+}
+
+.all-grid-center {
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 25px;
+}
+
+.equipe{
+    display: block;
+    margin: 0 auto;
 }
 
 /* RESPONSIVE */
@@ -60,12 +77,20 @@ h2.title-about-history{
     .about-text {
         grid-template-columns: auto auto;
     }
+    .img{
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 940px)
 {
     .about-grid{
         grid-template-columns: 1fr;
+    }
+    .img{
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -74,16 +99,24 @@ h2.title-about-history{
     .aboutUs {
         padding: 10px 15px;
     }
-    .history-container {
+    .one-container {
+        padding: 70px 15px;
+    }
+    .two-container {
         padding: 70px 15px;
     }
     .about-text {
         grid-template-columns: 1fr;
     }
 
-    .history-grid {
+    .all-grid {
         display: grid;
         grid-template-columns: auto;
         column-gap: 25px;
+    }
+
+    .img{
+        max-width: 100%;
+        height: auto;
     }
 }
